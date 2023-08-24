@@ -5,10 +5,10 @@
         der arbejder som <mark>Full Stack Developer</mark> i systemer som 
         WordPress, Laravel og CakePHP.
     </p>
-    <a href="/about-me/">> Mere om mig</a>
+    <a href="/me/">> Mere om mig</a>
 </section>
 
-<style>
+<style lang="scss">
     section {
 		max-width: 600px;
 		margin: 4rem 0;
@@ -54,20 +54,20 @@
         text-decoration: none;
         color: var(--clr-white);
         display: inline-block;
-    }
 
-    a:hover::after {
-        width: 100%;
-    }
+        &:hover::after {
+            width: 100%;
+        }
 
-    a::after {
-        content: '';
-        background-color: blue;
-        height: 2px;
-        border-radius: 10%;
-        width: 20%;
-        display: block;
-        transition: width 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+        &::after {
+            content: '';
+            background-color: blue;
+            height: 2px;
+            border-radius: 10%;
+            width: 20%;
+            display: block;
+            transition: width 0.2s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+        }
     }
 
 	.text-gradient {

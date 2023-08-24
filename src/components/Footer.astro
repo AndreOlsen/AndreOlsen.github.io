@@ -2,7 +2,7 @@
 const curYear = new Date().getFullYear();
 ---
 
-<footer>
+<footer transition:persist>
     <nav>
         <a href="https://github.com/AndreOlsen" target="_blank">Github</a>
         <span>/</span>
@@ -16,11 +16,9 @@ const curYear = new Date().getFullYear();
     </p>
 </footer>
 
-<style>
+<style lang="scss">
     footer {
-        margin: 0 auto;
         padding-bottom: 20px;
-        width: var(--site-width);
         max-width: calc(100% - 2rem);
         display: flex;
         justify-content: space-between;
@@ -39,7 +37,7 @@ const curYear = new Date().getFullYear();
     }
     
     span {
-        color: #EDF0ED;
+        color: var(--clr-white);
         padding-inline: 5px;
     }
 </style>

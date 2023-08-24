@@ -1,12 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroLayout from '../layouts/HeroLayout.astro';
-import Card from '../components/Card.astro';
+import Layout from '@layouts/Layout.astro';
+import HeroLayout from '@layouts/HeroLayout.astro';
+import Card from '@components/Card.astro';
+import Slider from '@components/Slider.astro';
 ---
 
 <Layout title="Hello There">
 	<main>
 		<HeroLayout />
+
+		<h2>// Blog</h2>
+		<ul role="list" class="link-card-box">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+		</ul>
 
 		<h2>// Projekter</h2>
 		<ul role="list" class="link-card-grid">
@@ -31,13 +51,13 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+
+		<Slider title="Mit arbejde"/>
 	</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		width: 1000px;
 		max-width: calc(100% - 2rem);
 		color: var(--clr-white);
 		font-size: 20px;
@@ -48,5 +68,12 @@ import Card from '../components/Card.astro';
 		display: grid;
 		gap: 1rem;
 		padding: 0;
+	}
+
+	.link-card-box {
+		display: grid;
+		gap: 1rem;
+		padding: 0;
+		grid-template-columns: repeat(3, 1fr);
 	}
 </style>

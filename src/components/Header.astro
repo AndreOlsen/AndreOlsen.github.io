@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from '../components/ThemeToggle.astro';
+import ThemeToggle from '@components/ThemeToggle.astro';
 
 interface Props {
 	email: string;
@@ -8,9 +8,14 @@ interface Props {
 const { email } = Astro.props;
 ---
 
-<header>
+<header transition:persist>
     <div>
-        <a href=`mailto:${email}`>{email}</a>
+        <a class="email" href=`mailto:${email}`>
+            <svg id="email-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 256 256">
+                <path fill="currentColor" d="M224 50H32a6 6 0 0 0-6 6v136a14 14 0 0 0 14 14h176a14 14 0 0 0 14-14V56a6 6 0 0 0-6-6Zm-15.42 12L128 135.86L47.42 62ZM216 194H40a2 2 0 0 1-2-2V69.64l86 78.78a6 6 0 0 0 8.1 0L218 69.64V192a2 2 0 0 1-2 2Z"/>
+            </svg>
+            <span id="email-text">{email}</span>
+        </a>
     </div>
 
     <div>
@@ -18,41 +23,72 @@ const { email } = Astro.props;
             <a href="/">Home</a>
             <span>/</span>
             <a href="/projects/">Projekter</a>
+            <span>/</span>
+            <a href="/me/">Mig</a>
         </nav>
 
         <ThemeToggle />
     </div>
 </header>
 
-<style>
+<style lang="scss">
     header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 0 auto;
         padding-top: 20px;
-        width: var(--site-width);
         max-width: calc(100% - 2rem);
-    }
 
-    header > div:last-child {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
+        > div:last-child {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            white-space: nowrap;
+        }
     }
 
     a {
         color: var(--clr-white);
         text-decoration: none;
-    }
 
-    a:is(:hover, :focus) {
-        color: #FFF;
+        &:is(:hover, :focus) {
+            color: #FFF;
+        }
     }
 
     span {
         color: var(--clr-white);
         padding-inline: 5px;
+    }
+
+    .email {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    #email-text {
+        width: 0;
+        overflow: hidden;
+        transition: all .1s;
+        padding: 0;
+
+        @media screen and (min-width: 480px) {
+            width: 100%;
+        }
+    }
+
+    #email-icon {
+        color: var(--clr-white);
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        transition: all .1s;
+
+        @media screen and (min-width: 480px) {
+            left: -200px;
+        }
     }
 </style>
