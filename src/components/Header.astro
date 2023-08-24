@@ -11,8 +11,8 @@ const { email } = Astro.props;
 <header transition:persist>
     <div>
         <a class="email" href=`mailto:${email}`>
-            <svg id="email-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 256 256">
-                <path fill="currentColor" d="M224 50H32a6 6 0 0 0-6 6v136a14 14 0 0 0 14 14h176a14 14 0 0 0 14-14V56a6 6 0 0 0-6-6Zm-15.42 12L128 135.86L47.42 62ZM216 194H40a2 2 0 0 1-2-2V69.64l86 78.78a6 6 0 0 0 8.1 0L218 69.64V192a2 2 0 0 1-2 2Z"/>
+            <svg id="email-icon"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5.82 11L8 13.17a1.1 1.1 0 0 0 1.05.3a1.12 1.12 0 0 0 .81-.74L13.44 2A1.12 1.12 0 0 0 12 .56L1.27 4.14A1.12 1.12 0 0 0 .53 5a1.1 1.1 0 0 0 .3 1l2.74 2.74l-.09 3.47ZM13.12.78L3.57 8.74"/>
             </svg>
             <span id="email-text">{email}</span>
         </a>
@@ -38,6 +38,7 @@ const { email } = Astro.props;
         justify-content: space-between;
         align-items: center;
         padding-top: 20px;
+        margin: auto;
         max-width: calc(100% - 2rem);
 
         > div:last-child {
@@ -89,6 +90,14 @@ const { email } = Astro.props;
 
         @media screen and (min-width: 480px) {
             left: -200px;
+        }
+
+        &:is(:hover, :focus) {
+            color: var(--clr-black);
+            
+            path {
+                fill: var(--clr-white);
+            }
         }
     }
 </style>

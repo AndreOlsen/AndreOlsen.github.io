@@ -14,5 +14,8 @@
     "astro-icon": "^0.8.1",
     "sass": "^1.66.1",
     "swiper": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/swiper": "^6.0.0"
   }
 }
