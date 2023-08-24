@@ -1,0 +1,45 @@
+---
+const curYear = new Date().getFullYear();
+---
+
+<footer>
+    <nav>
+        <a href="https://github.com/AndreOlsen" target="_blank">Github</a>
+        <span>/</span>
+        <a href="https://dk.linkedin.com/in/andre-w-olsen" target="_blank">LinkedIn</a>
+        <span>/</span>
+        <a href="https://codepen.io/Andr-Olsen" target="_blank">CodePen</a>
+    </nav>
+
+    <p>
+        Copyright &copy; {curYear} André Winther Olsen
+    </p>
+</footer>
+
+<style>
+    footer {
+        margin: 0 auto;
+        padding-bottom: 20px;
+        width: var(--site-width);
+        max-width: calc(100% - 2rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    a {
+        color: var(--clr-white);
+        text-decoration: none;
+    }
+
+    p {
+        color: var(--clr-white);
+        margin: 0;
+    }
+    
+    span {
+        color: #EDF0ED;
+        padding-inline: 5px;
+    }
+</style>

@@ -1,0 +1,58 @@
+---
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+interface Props {
+	email: string;
+}
+
+const { email } = Astro.props;
+---
+
+<header>
+    <div>
+        <a href=`mailto:${email}`>{email}</a>
+    </div>
+
+    <div>
+        <nav>
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/projects/">Projekter</a>
+        </nav>
+
+        <ThemeToggle />
+    </div>
+</header>
+
+<style>
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 20px;
+        width: var(--site-width);
+        max-width: calc(100% - 2rem);
+    }
+
+    header > div:last-child {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    a {
+        color: var(--clr-white);
+        text-decoration: none;
+    }
+
+    a:is(:hover, :focus) {
+        color: #FFF;
+    }
+
+    span {
+        color: var(--clr-white);
+        padding-inline: 5px;
+    }
+</style>
