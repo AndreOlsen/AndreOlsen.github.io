@@ -8,7 +8,7 @@ interface Props {
 const { email } = Astro.props;
 ---
 
-<header transition:persist>
+<header>
     <div>
         <a class="email" href=`mailto:${email}`>
             <svg id="email-icon"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
@@ -37,8 +37,7 @@ const { email } = Astro.props;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding-top: 20px;
-        margin: auto;
+        margin: 1.5rem auto 3rem auto;
         max-width: calc(100% - 2rem);
 
         > div:last-child {
@@ -50,7 +49,7 @@ const { email } = Astro.props;
     }
 
     a {
-        color: var(--clr-white);
+        color: var(--clr-fg);
         text-decoration: none;
 
         &:is(:hover, :focus) {
@@ -59,7 +58,7 @@ const { email } = Astro.props;
     }
 
     span {
-        color: var(--clr-white);
+        color: var(--clr-fg);
         padding-inline: 5px;
     }
 
@@ -82,7 +81,7 @@ const { email } = Astro.props;
     }
 
     #email-icon {
-        color: var(--clr-white);
+        color: var(--clr-fg);
         cursor: pointer;
         position: absolute;
         left: 0;

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import MakaiTravels from '@assets/website-showcase/makaitravels/landingpage.png';
-import ActivCare from '@assets/website-showcase/activcare/landingpage.png';
+import MakaiTravels from '@assets/website-showcase/makaitravels.png';
+import ActivCare from '@assets/website-showcase/activcare.png';
 
 interface Props {
 	title: string;
@@ -11,7 +11,7 @@ const { title } = Astro.props;
 ---
 <h2>// {title}</h2>
 <!-- Slider main container -->
-<div class="swiper">
+<div transition:persist class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
@@ -64,7 +64,8 @@ const { title } = Astro.props;
         width: 20%;
         height: 500px;
         z-index: 9999;
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, .15);
+        backdrop-filter: saturate(180%) blur(10px);
         padding: 20px;
         text-align: center;
         color: var(--clr-black);

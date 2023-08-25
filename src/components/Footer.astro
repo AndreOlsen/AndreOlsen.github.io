@@ -1,15 +1,11 @@
 ---
+import Socials from '@components/Socials.astro';
+
 const curYear = new Date().getFullYear();
 ---
 
 <footer transition:persist>
-    <nav>
-        <a href="https://github.com/AndreOlsen" target="_blank">Github</a>
-        <span>/</span>
-        <a href="https://dk.linkedin.com/in/andre-w-olsen" target="_blank">LinkedIn</a>
-        <span>/</span>
-        <a href="https://codepen.io/Andr-Olsen" target="_blank">CodePen</a>
-    </nav>
+    <Socials />
 
     <p>
         Copyright &copy; {curYear} André Winther Olsen
@@ -18,27 +14,16 @@ const curYear = new Date().getFullYear();
 
 <style lang="scss">
     footer {
-        padding-bottom: 20px;
-        margin: auto;
-        max-width: calc(100% - 2rem);
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-    }
-
-    a {
-        color: var(--clr-white);
-        text-decoration: none;
+        margin: 3rem auto 1.5rem auto;
+        max-width: calc(100% - 2rem);
     }
 
     p {
-        color: var(--clr-white);
+        color: var(--clr-fg);
         margin: 0;
-    }
-    
-    span {
-        color: var(--clr-white);
-        padding-inline: 5px;
     }
 </style>

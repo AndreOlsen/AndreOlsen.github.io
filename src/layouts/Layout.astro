@@ -2,6 +2,7 @@
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
+import 'normalize.css/normalize.css';
 
 interface Props {
 	title: string;
@@ -11,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Portfolio til André Winther Olsen, full stack udvikler med speciale i PHP.">
@@ -23,7 +24,10 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div class="page-wrapper">
-			<Header email="ao.andreolsen@gmail.com" />
+			<Header 
+				transition:persist 
+				email="ao.andreolsen@gmail.com" 
+			/>
 
 			<slot />
 
@@ -32,28 +36,41 @@ const { title } = Astro.props;
 	</body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+		--clr-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--clr-teal)) 30%, var(--clr-white) 60%);
 		--site-width: 1000px;
 		--clr-white: #EDF0ED;
 		--clr-black: #212121;
 		--clr-sun: #FCB033;
 		--clr-moon: #DCDCDC;
+		--clr-teal: 39, 199, 171;
 		--accent-orange: radial-gradient(circle at 10% 20%, rgb(252, 251, 121) 0%, rgb(255, 200, 124) 90%);
 		--accent-teal: radial-gradient(circle at 10% 20%, rgb(39, 199, 171) 0%, rgb(70, 143, 197) 90%);
 	}
 
+	[data-theme="light"] {
+		--clr-bg: var(--clr-white);
+		--clr-fg: var(--clr-black);
+	}
+
+	[data-theme="dark"] {
+		--clr-bg: var(--clr-black);
+		--clr-fg: var(--clr-white);
+	}
+
 	html {
 		font-family: system-ui, sans-serif;
-		background: var(--clr-black);
+		background: var(--clr-bg);
 	}
 
 	body {
-		background-color: var(--clr-black);
+		background-color: var(--clr-bg);
+		color: var(--clr-fg);
 		margin: 0;
 	}
 
@@ -61,5 +78,9 @@ const { title } = Astro.props;
 		max-width: var(--site-width);
 		margin: 0 auto;
 		overflow: hidden;
+	}
+
+	* {
+		color: var(--clr-fg);
 	}
 </style>
