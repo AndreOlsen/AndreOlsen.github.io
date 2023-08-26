@@ -2,48 +2,46 @@
 import { Image } from 'astro:assets';
 import MakaiTravels from '@assets/website-showcase/makaitravels.png';
 import ActivCare from '@assets/website-showcase/activcare.png';
-
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
 ---
-<h2>// {title}</h2>
-<!-- Slider main container -->
-<div transition:persist class="swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-            <Image src={MakaiTravels} alt="Makai Travels" />
-            <div class="description">
-                <h4>Makai Travels</h4>
-                <p>
-                    Vanilla Wordpress hjemmeside baseret på temaet Flatsome.
-                </p>
+
+<section>
+    <h2>// Mit arbejde</h2>
+
+    <div transition:persist class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <Image src={MakaiTravels} alt="Makai Travels" />
+                
+                <div class="description">
+                    <h4>Makai Travels</h4>
+                    <p>
+                        Vanilla Wordpress hjemmeside baseret på temaet Flatsome.
+                    </p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <Image src={ActivCare} alt="ActivCare" />
+
+                <div class="description">
+                    <h4>ActivCare</h4>
+                    <p>
+                        Vanilla Wordpress hjemmeside baseret på temaet Flatsome.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="swiper-slide">
-            <Image src={ActivCare} alt="ActivCare" />
-            <div class="description">
-                <h4>ActivCare</h4>
-                <p>
-                    Vanilla Wordpress hjemmeside baseret på temaet Flatsome.
-                </p>
-            </div>
-        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
     </div>
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <!-- <div class="swiper-scrollbar"></div> -->
-</div>
+</section>
 
 <style>
     .swiper {

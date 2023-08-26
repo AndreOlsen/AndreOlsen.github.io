@@ -9,26 +9,28 @@ const { email } = Astro.props;
 ---
 
 <header>
-    <div>
-        <a class="email" href=`mailto:${email}`>
-            <svg id="email-icon"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5.82 11L8 13.17a1.1 1.1 0 0 0 1.05.3a1.12 1.12 0 0 0 .81-.74L13.44 2A1.12 1.12 0 0 0 12 .56L1.27 4.14A1.12 1.12 0 0 0 .53 5a1.1 1.1 0 0 0 .3 1l2.74 2.74l-.09 3.47ZM13.12.78L3.57 8.74"/>
-            </svg>
-            <span id="email-text">{email}</span>
-        </a>
-    </div>
+    <a class="email" title="Send mig en email!" href=`mailto:${email}`>
+        <svg id="email-icon"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5.82 11L8 13.17a1.1 1.1 0 0 0 1.05.3a1.12 1.12 0 0 0 .81-.74L13.44 2A1.12 1.12 0 0 0 12 .56L1.27 4.14A1.12 1.12 0 0 0 .53 5a1.1 1.1 0 0 0 .3 1l2.74 2.74l-.09 3.47ZM13.12.78L3.57 8.74"/>
+        </svg>
+        <span id="email-text">{email}</span>
+    </a>
 
-    <div>
-        <nav>
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/projects/">Projekter</a>
-            <span>/</span>
-            <a href="/me/">Mig</a>
-        </nav>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/projects/">Projekter</a>
+            </li>
+            <li>
+                <a href="/me/">Mig</a>
+            </li>
+        </ul>
 
         <ThemeToggle />
-    </div>
+    </nav>
 </header>
 
 <style lang="scss">
@@ -39,12 +41,29 @@ const { email } = Astro.props;
         align-items: center;
         margin: 1.5rem auto 3rem auto;
         max-width: calc(100% - 2rem);
+    }
 
-        > div:last-child {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
+    nav {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    ul {
+        display: inherit;
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
             white-space: nowrap;
+            display: inherit;
+
+            &:not(:last-child)::after {
+                content: '/';
+                color: var(--clr-fg);
+                padding-inline: .5rem;
+            }
         }
     }
 
@@ -57,38 +76,42 @@ const { email } = Astro.props;
         }
     }
 
-    span {
-        color: var(--clr-fg);
-        padding-inline: 5px;
-    }
-
     .email {
-        position: relative;
+        display: grid;
+        grid-template: "overlayed";
+
+        & > * {
+            grid-area: overlayed;
+        }
+
+        /* position: relative;
         display: flex;
         align-items: center;
-        width: 100%;
+        min-width: 25px; */
     }
 
     #email-text {
         width: 0;
         overflow: hidden;
-        transition: all .1s;
+        transition: width .1s cubic-bezier(.48, -.38, .41, 1.22);
         padding: 0;
+        align-self: center;
 
         @media screen and (min-width: 480px) {
+            transition-delay: .1s;
             width: 100%;
         }
     }
 
     #email-icon {
-        color: var(--clr-fg);
         cursor: pointer;
-        position: absolute;
-        left: 0;
-        transition: all .1s;
+        color: var(--clr-fg);
+        margin-left: 0;
+        transition: all .1s cubic-bezier(.48, -.38, .41, 1.22) .1s;
 
         @media screen and (min-width: 480px) {
-            left: -200px;
+            transition: all .1s cubic-bezier(.48, -.38, .41, 1.22);
+            margin-left: -200px;
         }
 
         &:is(:hover, :focus) {

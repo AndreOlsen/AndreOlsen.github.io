@@ -4,7 +4,7 @@ import Socials from '@components/Socials.astro';
 const curYear = new Date().getFullYear();
 ---
 
-<footer transition:persist>
+<footer>
     <Socials />
 
     <p>
@@ -18,8 +18,10 @@ const curYear = new Date().getFullYear();
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         margin: 3rem auto 1.5rem auto;
         max-width: calc(100% - 2rem);
+        transition: all .1s cubic-bezier(.48, -.38, .41, 1.22);
     }
 
     p {

@@ -1,15 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import HeroLayout from '@layouts/HeroLayout.astro';
+import Hero from '@components/Hero.astro';
 import Card from '@components/Card.astro';
 import Slider from '@components/Slider.astro';
 import Socials from '@components/Socials.astro';
-import Icon from 'astro-icon';
+import TechStack from '@components/TechStack.astro';
 ---
 
 <Layout title="Hello There">
 	<main>
-		<HeroLayout />
+		<Hero />
 
 		<Socials />
 
@@ -27,17 +27,12 @@ import Icon from 'astro-icon';
 					title="Integrations"
 					body="Supercharge your project with new frameworks and libraries."
 				/>
-				<Card
-					href="https://astro.build/themes/"
-					title="Themes"
-					body="Explore a galaxy of community-built starter themes."
-				/>
 			</ul>
 		</section>
 
 		<section>
 			<h2>// Projekter</h2>
-			
+
 			<ul role="list" class="link-card-grid">
 				<Card
 					href="https://docs.astro.build/"
@@ -62,40 +57,13 @@ import Icon from 'astro-icon';
 			</ul>
 		</section>
 
-		<section class="tech-stack">
-			<h2>// The Stack</h2>
-
-			<div>
-				<Icon name="vscode-icons:file-type-html" />
-				<Icon name="vscode-icons:file-type-css" />
-				<Icon name="vscode-icons:file-type-php3" />
-				<Icon name="vscode-icons:file-type-sass" />
-				<Icon name="vscode-icons:file-type-js-official" />
-				<Icon name="mdi:jquery" color="#0868AC"/>
-				<Icon name="vscode-icons:file-type-blade" />
-				<Icon name="vscode-icons:file-type-cakephp" />
-				<Icon name="vscode-icons:file-type-mysql" />
-				<Icon name="vscode-icons:file-type-git" />
-				<Icon name="vscode-icons:file-type-npm" />
-				<Icon name="vscode-icons:file-type-node" />
-			</div>
-		</section>
+		<TechStack />
 
 		<Slider title="Mit arbejde" />
 	</main>
 </Layout>
 
 <style lang="scss">
-	.tech-stack {
-		[astro-icon] {
-			width: 30px;
-		}
-
-		h2 {
-			margin: 0;
-		}
-	}
-
 	main {
 		max-width: calc(100% - 2rem);
 		margin: auto;
@@ -114,6 +82,6 @@ import Icon from 'astro-icon';
 		display: grid;
 		gap: 1rem;
 		padding: 0;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	}
 </style>
