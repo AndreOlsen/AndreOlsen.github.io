@@ -19,18 +19,19 @@ import Icon from 'astro-icon';
         <Icon name="vscode-icons:file-type-npm" title="NPM (Node Package Manager)" />
         <Icon name="vscode-icons:file-type-node" title="NodeJS" />
         <Icon name="mdi:wordpress" title="WordPress" color="#2A789D" />
+        <Icon name="simple-icons:astro" title="Astro" color="#808080"/>
     </div>
 </section>
 
 <style lang="scss">
     .tech-stack {
 		[astro-icon] {
-			width: 60px;
+			width: clamp(3.125rem, 2.976rem + 0.645vw, 3.75rem);
 		}
 
         div {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(21%, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
             grid-auto-rows: 100px;
             grid-gap: 20px;
             justify-items: center;
