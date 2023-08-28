@@ -12,11 +12,11 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="da" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Portfolio til André Winther Olsen, full stack udvikler med speciale i PHP.">
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -24,10 +24,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div class="page-wrapper">
-			<Header 
-				transition:persist 
-				email="ao.andreolsen@gmail.com" 
-			/>
+			<Header transition:persist />
 
 			<slot />
 
@@ -51,6 +48,7 @@ const { title } = Astro.props;
 		--clr-teal: 39, 199, 171;
 		--accent-orange: radial-gradient(circle at 10% 20%, rgb(252, 251, 121) 0%, rgb(255, 200, 124) 90%);
 		--accent-teal: radial-gradient(circle at 10% 20%, rgb(39, 199, 171) 0%, rgb(70, 143, 197) 90%);
+		--bouncy-cubic: cubic-bezier(.48, -.38, .41, 1.22);
 	}
 
 	[data-theme="light"] {

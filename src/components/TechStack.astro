@@ -1,25 +1,73 @@
 ---
 import Icon from 'astro-icon';
+import SkillLevel from '@components/SkillLevel.astro';
+
+const skills = [
+    {
+        title: 'HTML',
+        level: 5,
+        icon: 'vscode-icons:file-type-html'
+    },
+    {
+        title: 'CSS',
+        level: 5,
+        icon: 'vscode-icons:file-type-css'
+    },
+    {
+        title: 'PHP',
+        level: 4,
+        icon: 'vscode-icons:file-type-php3'
+    },
+    {
+        title: 'SASS',
+        level: 4,
+        icon: 'vscode-icons:file-type-sass'
+    }, 
+    {
+        title: 'JavaScript',
+        level: 4,
+        icon: 'vscode-icons:file-type-js-official'
+    },
+    {
+        title: 'jQuery',
+        level: 4,
+        icon: 'mdi:jquery',
+        color: '#0868AC'
+    },
+    {
+        title: 'Laravel',
+        level: 3,
+        icon: 'vscode-icons:file-type-blade'
+    }
+];
 ---
 
 <section class="tech-stack">
     <h2>// The Stack</h2>
 
-    <div>
-        <Icon name="vscode-icons:file-type-html" title="HTML" />
+    <div class="stack">
+        {skills.map((skill) => 
+            <div class="tech">
+                <Icon name={skill.icon} title={skill.title} color={skill.color && skill.color} />
+                <SkillLevel level={skill.level} />
+            </div>
+        )}
+        
+        <!-- <Icon name="vscode-icons:file-type-html" title="HTML" />
         <Icon name="vscode-icons:file-type-css" title="CSS" />
         <Icon name="vscode-icons:file-type-php3" title="PHP" />
         <Icon name="vscode-icons:file-type-sass" title="SASS/SCSS" />
         <Icon name="vscode-icons:file-type-js-official" title="JavaScript" />
         <Icon name="mdi:jquery" color="#0868AC" title="jQuery" />
-        <Icon name="vscode-icons:file-type-blade" title="Laravel" />
+        <Icon name="vscode-icons:file-type-blade" title="Laravel" /> -->
         <Icon name="vscode-icons:file-type-cakephp" title="CakePHP" />
         <Icon name="vscode-icons:file-type-mysql" title="SQL" />
-        <Icon name="vscode-icons:file-type-git" title="GIT" />
+        <Icon name="vscode-icons:file-type-git" title="Git" />
         <Icon name="vscode-icons:file-type-npm" title="NPM (Node Package Manager)" />
         <Icon name="vscode-icons:file-type-node" title="NodeJS" />
         <Icon name="mdi:wordpress" title="WordPress" color="#2A789D" />
-        <Icon name="simple-icons:astro" title="Astro" color="#808080"/>
+        <Icon name="simple-icons:astro" title="Astro" color="#808080" />
+        <Icon name="simple-icons:typescript" title="TypeScript" color="#808080" />
     </div>
 </section>
 
@@ -27,14 +75,20 @@ import Icon from 'astro-icon';
     .tech-stack {
 		[astro-icon] {
 			width: clamp(3.125rem, 2.976rem + 0.645vw, 3.75rem);
+            transition: all .2s var(--bouncy-cubic);
+
+            &:is(:hover) {
+                transform: scale(1.4);
+            }
 		}
 
-        div {
+        > div {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
             grid-auto-rows: 100px;
             grid-gap: 20px;
             justify-items: center;
+            align-items: center;
         }
 	}
 </style>

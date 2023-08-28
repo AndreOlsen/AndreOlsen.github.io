@@ -1,11 +1,7 @@
 ---
 import ThemeToggle from '@components/ThemeToggle.astro';
 
-interface Props {
-	email: string;
-}
-
-const { email } = Astro.props;
+const email = 'ao.andreolsen@gmail.com';
 ---
 
 <header>
@@ -83,17 +79,12 @@ const { email } = Astro.props;
         & > * {
             grid-area: overlayed;
         }
-
-        /* position: relative;
-        display: flex;
-        align-items: center;
-        min-width: 25px; */
     }
 
     #email-text {
         width: 0;
         overflow: hidden;
-        transition: width .1s cubic-bezier(.48, -.38, .41, 1.22);
+        transition: width .1s var(--bouncy-cubic);
         padding: 0;
         align-self: center;
 
@@ -107,10 +98,10 @@ const { email } = Astro.props;
         cursor: pointer;
         color: var(--clr-fg);
         margin-left: 0;
-        transition: all .1s cubic-bezier(.48, -.38, .41, 1.22) .1s;
+        transition: all .1s var(--bouncy-cubic) .1s;
 
-        @media screen and (min-width: 480px) {
-            transition: all .1s cubic-bezier(.48, -.38, .41, 1.22);
+        @media screen and (min-width: 480px) {/*  */
+            transition: all .1s var(--bouncy-cubic);
             margin-left: -200px;
         }
 
