@@ -2,9 +2,9 @@
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/Hero.astro';
 import Card from '@components/Card.astro';
-import Slider from '@components/Slider.astro';
 import Socials from '@components/Socials.astro';
 import TechStack from '@components/TechStack.astro';
+import Icon from 'astro-icon';
 ---
 
 <Layout title="Hello There">
@@ -13,53 +13,61 @@ import TechStack from '@components/TechStack.astro';
 
 		<Socials />
 
-		<section>
-			<h2>// Blog</h2>
+		<section class="section blog">
+			<h2 class="section__title">// Blog</h2>
 
-			<ul role="list" class="link-card-box">
-				<Card
-					href="https://docs.astro.build/"
-					title="Documentation"
-					body="Learn how Astro works and explore the official API docs."
-				/>
-				<Card
-					href="https://astro.build/integrations/"
-					title="Integrations"
-					body="Supercharge your project with new frameworks and libraries."
-				/>
-			</ul>
+			<div class="section__content">
+				<a href="#" class="blog-post">
+					<h3 class="blog-post__title">
+						Opbygninen af min hjemmeside
+						<Icon name="uil:arrow-up" />
+					</h3>
+					<p class="blog-post__excerpt">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem suscipit dolor quae assumenda itaque, aliquam dolores officiis? Minus illum reprehenderit atque. Quae dolor blanditiis consequuntur magni. Quaerat ratione labore dolor.
+					</p>
+				</a>
+				<a href="#" class="blog-post">
+					<h3 class="blog-post__title">
+						Opbygninen af min hjemmeside
+						<Icon name="uil:arrow-up" />
+					</h3>
+					<p class="blog-post__excerpt">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem suscipit dolor quae assumenda itaque, aliquam dolores officiis? Minus illum reprehenderit atque. Quae dolor blanditiis consequuntur magni. Quaerat ratione labore dolor.
+					</p>
+				</a>
+			</div>
 		</section>
 
-		<section>
-			<h2>// Projekter</h2>
+		<section class="section projects">
+			<h2 class="section__title">// Projekter</h2>
 
-			<ul role="list" class="link-card-grid">
-				<Card
-					href="https://docs.astro.build/"
-					title="Documentation"
-					body="Learn how Astro works and explore the official API docs."
-				/>
-				<Card
-					href="https://astro.build/integrations/"
-					title="Integrations"
-					body="Supercharge your project with new frameworks and libraries."
-				/>
-				<Card
-					href="https://astro.build/themes/"
-					title="Themes"
-					body="Explore a galaxy of community-built starter themes."
-				/>
-				<Card
-					href="https://astro.build/chat/"
-					title="Community"
-					body="Come say hi to our amazing Discord community. ❤️"
-				/>
-			</ul>
+			<div class="section__content">
+				<ul role="list" class="link-card-grid">
+					<Card
+						href="https://docs.astro.build/"
+						title="Documentation"
+						body="Learn how Astro works and explore the official API docs."
+					/>
+					<Card
+						href="https://astro.build/integrations/"
+						title="Integrations"
+						body="Supercharge your project with new frameworks and libraries."
+					/>
+					<Card
+						href="https://astro.build/themes/"
+						title="Themes"
+						body="Explore a galaxy of community-built starter themes."
+					/>
+					<Card
+						href="https://astro.build/chat/"
+						title="Community"
+						body="Come say hi to our amazing Discord community. ❤️"
+					/>
+				</ul>
+			</div>
 		</section>
 
 		<TechStack />
-
-		<Slider title="Mit arbejde" />
 	</main>
 </Layout>
 
@@ -78,10 +86,39 @@ import TechStack from '@components/TechStack.astro';
 		padding: 0;
 	}
 
-	.link-card-box {
-		display: grid;
-		gap: 1rem;
-		padding: 0;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+	/* ---- BLOG POSTS ---- */
+
+	.section__content {
+		display:grid;
+		gap: 2rem;
+		place-items: center;
+		align-items: center;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.blog-post {
+		padding: 1.3rem;
+		color: var(--clr-fg);
+		text-decoration: none;
+
+		&:hover {
+			border-radius: 8px;
+			box-shadow: 0 0 1px #000;
+			background-color: #27404c;
+		}
+		&__title {
+			display: flex;
+			margin: 0 0 1rem 0;
+		}
+		&__excerpt {
+			margin: 0;
+			font-size: 1rem;
+		}
+	}
+
+	[astro-icon] {
+		width: 30px;
+		transform: rotate(45deg);
 	}
 </style>

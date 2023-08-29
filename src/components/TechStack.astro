@@ -36,23 +36,26 @@ const skills = [
     },
     {
         title: 'Laravel',
-        level: 3,
+        level: null,
         icon: 'vscode-icons:file-type-blade'
     }
 ];
 ---
+<section class="section skills">
+    <h2 class="section__title">// The Stack</h2>
 
-<section class="tech-stack">
-    <h2>// The Stack</h2>
-
-    <div class="stack">
+    <div class="section__content">    
         {skills.map((skill) => 
-            <div class="tech">
-                <Icon name={skill.icon} title={skill.title} color={skill.color && skill.color} />
-                <SkillLevel level={skill.level} />
+            <div class="skill">
+                <Icon 
+                    name={skill.icon} 
+                    title={skill.title} 
+                    color={skill.color && skill.color} 
+                    class="skill__icon"
+                />
             </div>
         )}
-        
+
         <!-- <Icon name="vscode-icons:file-type-html" title="HTML" />
         <Icon name="vscode-icons:file-type-css" title="CSS" />
         <Icon name="vscode-icons:file-type-php3" title="PHP" />
@@ -65,30 +68,57 @@ const skills = [
         <Icon name="vscode-icons:file-type-git" title="Git" />
         <Icon name="vscode-icons:file-type-npm" title="NPM (Node Package Manager)" />
         <Icon name="vscode-icons:file-type-node" title="NodeJS" />
-        <Icon name="mdi:wordpress" title="WordPress" color="#2A789D" />
+        <Icon name="mdi:wordpress" title="WordPress" color="#2A789D" class="skill__icon"/>
         <Icon name="simple-icons:astro" title="Astro" color="#808080" />
         <Icon name="simple-icons:typescript" title="TypeScript" color="#808080" />
     </div>
 </section>
 
 <style lang="scss">
-    .tech-stack {
-		[astro-icon] {
-			width: clamp(3.125rem, 2.976rem + 0.645vw, 3.75rem);
-            transition: all .2s var(--bouncy-cubic);
+    [astro-icon] {
+        width: clamp(3.125rem, 2.976rem + 0.645vw, 3.75rem);
+        transition: all .2s var(--bouncy-cubic);
+        z-index: 10;
+    }
 
-            &:is(:hover) {
+    .section__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+        grid-auto-rows: 100px;
+        grid-gap: 1.5rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .skill {
+        display: grid;
+        grid-template: "overlayed";
+        place-items: center;
+        width: fit-content;
+
+        > * {
+            grid-area: overlayed;
+        }
+
+        div {
+            opacity: 0;
+            transition: all .2s var(--bouncy-cubic);
+        }
+
+        p {
+            margin: 0;
+        }
+
+        &:hover {
+            width: 100%;
+
+            div {
+                opacity: 1;
+            }
+
+            [astro-icon] {
                 transform: scale(1.4);
             }
-		}
-
-        > div {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
-            grid-auto-rows: 100px;
-            grid-gap: 20px;
-            justify-items: center;
-            align-items: center;
         }
-	}
+    }
 </style>
