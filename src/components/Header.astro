@@ -68,7 +68,7 @@ const email = 'ao.andreolsen@gmail.com';
         text-decoration: none;
 
         &:is(:hover, :focus) {
-            color: #FFF;
+            color: rgb(var(--clr-teal));
         }
     }
 
@@ -98,10 +98,12 @@ const email = 'ao.andreolsen@gmail.com';
         cursor: pointer;
         color: var(--clr-fg);
         margin-left: 0;
-        transition: all .1s var(--bouncy-cubic) .1s;
+        transition: 
+            margin-left .3s var(--bouncy-cubic) .1s,
+            fill .3s var(--bouncy-cubic) .1s;
 
-        @media screen and (min-width: 480px) {/*  */
-            transition: all .1s var(--bouncy-cubic);
+        @media screen and (min-width: 480px) {
+            transition: margin-left .3s var(--bouncy-cubic);
             margin-left: -200px;
         }
 

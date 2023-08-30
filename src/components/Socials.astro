@@ -1,20 +1,40 @@
+---
+import Icon from 'astro-icon'
+---
 <nav>
-    <a href="https://github.com/AndreOlsen" target="_blank">Github</a>
-    <span>/</span>
-    <a href="https://dk.linkedin.com/in/andre-w-olsen" target="_blank">LinkedIn</a>
-    <span>/</span>
-    <a href="https://codepen.io/Andr-Olsen" target="_blank">CodePen</a>
+    <a href="https://github.com/AndreOlsen" aria-label="Se min github" target="_blank">
+        <Icon name="mdi:github" />
+    </a>
+    <!-- <span>/</span> -->
+    <a href="https://dk.linkedin.com/in/andre-w-olsen" aria-label="Se min linkedin" target="_blank">
+        <Icon name="mdi:linkedin" />
+    </a>
+    <!-- <span>/</span> -->
+    <a href="https://codepen.io/Andr-Olsen" aria-label="Se min codepen" target="_blank">
+        <Icon name="mdi:codepen" />
+    </a>
 </nav>
 
-<style>
+<style lang="scss">
+    nav {
+        display: flex;
+        gap: 1rem;
+    }
+
+    [astro-icon] {
+        width: 30px;
+    }
+
     a {
         color: var(--clr-fg);
         text-decoration: none;
-        font-size: 1rem;
-    }
-    
-    span {
-        color: var(--clr-fg);
-        padding-inline: 5px;
+        display: inline-block;
+        transition: all .2s var(--bouncy-cubic);
+        filter: brightness(80%);
+
+        &:hover {
+            color: rgb(var(--clr-teal));
+            filter: brightness(100%);
+        }
     }
 </style>
