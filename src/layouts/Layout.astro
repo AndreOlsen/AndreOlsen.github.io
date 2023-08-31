@@ -5,19 +5,20 @@ import 'normalize.css/normalize.css';
 
 interface Props {
 	title: string;
+	description: string
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="da" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Portfolio til André Winther Olsen, full stack udvikler med speciale i PHP.">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
 	<body>

@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from '@components/ThemeToggle.astro';
+import Navigation from "@components/Navigation.astro";
 
 const email = 'ao.andreolsen@gmail.com';
 ---
@@ -12,21 +12,7 @@ const email = 'ao.andreolsen@gmail.com';
         <span id="email-text">{email}</span>
     </a>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/projects/">Projekter</a>
-            </li>
-            <li>
-                <a href="/me/">Mig</a>
-            </li>
-        </ul>
-
-        <ThemeToggle />
-    </nav>
+    <Navigation />
 </header>
 
 <style lang="scss">
@@ -37,30 +23,6 @@ const email = 'ao.andreolsen@gmail.com';
         align-items: center;
         margin: 1.5rem auto 3rem auto;
         max-width: calc(100% - 2rem);
-    }
-
-    nav {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    ul {
-        display: inherit;
-        margin: 0;
-        padding: 0;
-
-        li {
-            list-style-type: none;
-            white-space: nowrap;
-            display: inherit;
-
-            &:not(:last-child)::after {
-                content: '/';
-                color: var(--clr-fg);
-                padding-inline: .5rem;
-            }
-        }
     }
 
     a {

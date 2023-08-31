@@ -1,0 +1,54 @@
+---
+import ThemeToggle from "@components/ThemeToggle.astro";
+---
+
+<nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/projects/">Projekter</a>
+        </li>
+        <li>
+            <a href="/me/">Mig</a>
+        </li>
+    </ul>
+
+    <ThemeToggle />
+</nav>
+
+<style lang="scss">
+    nav {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    ul {
+        display: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        white-space: nowrap;
+        display: inherit;
+
+        &:not(:last-child)::after {
+            content: '/';
+            color: var(--clr-fg);
+            padding-inline: .5rem;
+        }
+    }
+
+    a {
+        color: var(--clr-fg);
+        text-decoration: none;
+
+        &:is(:hover, :focus) {
+            color: rgb(var(--clr-teal));
+        }
+    }
+</style>
