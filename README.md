@@ -13,5 +13,6 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-[Documentation](https://docs.astro.build) 
+[Documentation](https://docs.astro.build).
+
 [Discord server](https://astro.build/chat).
