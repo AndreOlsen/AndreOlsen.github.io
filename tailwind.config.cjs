@@ -9,7 +9,7 @@ module.exports = {
 				sans: ["Overpass Variable", ...defaultTheme.fontFamily.sans],
 			},
 			animation: {
-				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22)',
+				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22) both',
 				'wave': 'wave 2.5s infinite',
 			},
 			keyframes: {
