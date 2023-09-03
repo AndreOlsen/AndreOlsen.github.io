@@ -1,0 +1,21 @@
+@import '@fontsource-variable/source-sans-3';
+@import '@fontsource-variable/overpass';
+@import '@fontsource-variable/outfit';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1,
+    h2,
+    h3 {
+        /* @apply font-sans; */
+        font-family: "Overpass Variable", sans-serif;
+    }
+
+    p {
+        font-family: "Source Sans 3 Variable", sans-serif;
+        /* @apply text-base; */
+    }
+}

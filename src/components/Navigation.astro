@@ -2,12 +2,12 @@
 import ThemeToggle from "@components/ThemeToggle.astro";
 ---
 
-<nav>
-    <ul>
-        <li>
+<nav class="flex gap-4 items-center">
+    <ul class="flex">
+        <li class="after:content-['/'] after:px-2">
             <a href="/">Home</a>
         </li>
-        <li>
+        <li class="after:content-['/'] after:px-2">
             <a href="/projects/">Projekter</a>
         </li>
         <li>
@@ -17,38 +17,3 @@ import ThemeToggle from "@components/ThemeToggle.astro";
 
     <ThemeToggle />
 </nav>
-
-<style lang="scss">
-    nav {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    ul {
-        display: inherit;
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        list-style-type: none;
-        white-space: nowrap;
-        display: inherit;
-
-        &:not(:last-child)::after {
-            content: '/';
-            color: var(--clr-fg);
-            padding-inline: .5rem;
-        }
-    }
-
-    a {
-        color: var(--clr-fg);
-        text-decoration: none;
-
-        &:is(:hover, :focus) {
-            color: rgb(var(--clr-teal));
-        }
-    }
-</style>

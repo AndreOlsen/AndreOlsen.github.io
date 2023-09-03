@@ -4,10 +4,16 @@ import Navigation from "@components/Navigation.astro";
 const email = 'ao.andreolsen@gmail.com';
 ---
 
-<header>
+<header class="flex justify-between items-center px-4 mt-6 mb-12">
     <a class="email" title="Send mig en email!" href=`mailto:${email}`>
-        <svg id="email-icon"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5.82 11L8 13.17a1.1 1.1 0 0 0 1.05.3a1.12 1.12 0 0 0 .81-.74L13.44 2A1.12 1.12 0 0 0 12 .56L1.27 4.14A1.12 1.12 0 0 0 .53 5a1.1 1.1 0 0 0 .3 1l2.74 2.74l-.09 3.47ZM13.12.78L3.57 8.74"/>
+        <svg id="email-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
+            <path 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                d="M5.82 11L8 13.17a1.1 1.1 0 0 0 1.05.3a1.12 1.12 0 0 0 .81-.74L13.44 2A1.12 1.12 0 0 0 12 .56L1.27 4.14A1.12 1.12 0 0 0 .53 5a1.1 1.1 0 0 0 .3 1l2.74 2.74l-.09 3.47ZM13.12.78L3.57 8.74"
+            />
         </svg>
         <span id="email-text">{email}</span>
     </a>
@@ -16,20 +22,10 @@ const email = 'ao.andreolsen@gmail.com';
 </header>
 
 <style lang="scss">
-    header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1.5rem auto 3rem auto;
-        max-width: calc(100% - 2rem);
-    }
-
     a {
         color: var(--clr-fg);
-        text-decoration: none;
 
-        &:is(:hover, :focus) {
+        &:is(:hover, :active, :focus) {
             color: rgb(var(--clr-teal));
         }
     }
@@ -46,9 +42,9 @@ const email = 'ao.andreolsen@gmail.com';
     #email-text {
         width: 0;
         overflow: hidden;
-        transition: width .1s var(--bouncy-cubic);
         padding: 0;
         align-self: center;
+        transition: width .1s var(--bouncy-cubic);
 
         @media screen and (min-width: 480px) {
             transition-delay: .1s;
@@ -57,19 +53,23 @@ const email = 'ao.andreolsen@gmail.com';
     }
 
     #email-icon {
-        cursor: pointer;
         color: var(--clr-fg);
         margin-left: 0;
+        opacity: 1;
         transition: 
             margin-left .3s var(--bouncy-cubic) .1s,
-            fill .3s var(--bouncy-cubic) .1s;
+            fill .3s var(--bouncy-cubic) .1s,
+            opacity .3s var(--bouncy-cubic) .1s;
 
         @media screen and (min-width: 480px) {
-            transition: margin-left .3s var(--bouncy-cubic);
-            margin-left: -200px;
+            margin-left: -50px;
+            opacity: 0;
+            transition: 
+                margin-left .3s var(--bouncy-cubic)
+                opacity .3s var(--bouncy-cubic);
         }
 
-        &:is(:hover, :focus) {
+        &:is(:hover, :active, :focus) {
             color: var(--clr-black);
             
             path {

@@ -1,10 +1,14 @@
-<section class="section intro">
+<section class="mb-12">
     <h1 class="section__title">
-        <span class="title-small">Hej! <span class="wave">👋</span> Mit navn er</span>
-        <span class="title-big">André Olsen.</span>
+        <span class="text-3xl block animate-fade-in-up">
+            Hej! <span class="wave animate-wave inline-block">👋</span> Mit navn er
+        </span>
+        <span class="text-8xl text-gradient block font-bold animate-fade-in-up">
+            André Olsen.
+        </span>
     </h1>
 
-    <p class="section__content">
+    <p class="section__content max-w-[700px] text-xl animate-fade-in-up">
         Jeg er en <mark>Full Stack Developer</mark>, og min lidenskab ligger i at skabe enestående 
         og brugervenlige oplevelser på nettet. I øjeblikket finder du mig hos 
         <a target="_blank" rel="noopener" href="https://adtention.dk/">Adtention.</a>, 
@@ -13,73 +17,30 @@
 </section>
 
 <style lang="scss">
-    section {
-        margin-bottom: 3rem;
-	}
-
-    span {
-        display: block;
-    }
-
-    .title-small {
-        font-size: 1.5rem;
-        animation: slideUpDown .3s var(--bouncy-cubic);
-    }
-
-    .title-big {
-        background: var(--accent-teal);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-        font-size: clamp(3rem, 1.963rem + 4.486vw, 6rem);
-        animation: slideUpDown .3s var(--bouncy-cubic);
-        animation-delay: .1s;
+    .text-gradient {
+        @apply bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent;
     }
 
 	mark {
-        -webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-        background-image: var(--accent-orange);
-        font-weight: 700;
+        @apply bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent font-bold;
+        /* background-image: var(--accent-orange); */
 	}
 
     html[data-theme="light"] mark {
         filter: invert(1);    
     }
 
-	.wave {
-        animation: wave 2.5s infinite;
-        transform-origin: 70% 70%;
-        display: inline-block;
-    }
-
-    @keyframes wave {
-        0% { transform: rotate( 0.0deg) }
-        10% { transform: rotate(14.0deg) }
-        20% { transform: rotate(-8.0deg) }
-        30% { transform: rotate(14.0deg) }
-        40% { transform: rotate(-4.0deg) }
-        50% { transform: rotate(10.0deg) }
-        60% { transform: rotate( 0.0deg) } 
-        100% { transform: rotate( 0.0deg) }
-    }
-
 	h1 {
-		font-size: clamp(1.9rem, 5vw, 3rem);
-		font-weight: 700;
-		line-height: 1.2;
-		margin: 0;
-        color: var(--clr-fg);
+        /* color: var(--clr-fg); */
 	}
 
     p {
-        margin-bottom: 0;
-        max-width: 700px;
-        color: var(--clr-fg);
-        font-size: clamp(1rem, 0.824rem + 0.762vw, 1.3rem);
-        animation: slideUpDown .3s var(--bouncy-cubic);
-        animation-delay: .2s;
+        /* color: var(--clr-fg); */
+        /* font-size: clamp(1rem, 0.824rem + 0.762vw, 1.3rem); */
+        /* animation: slideUpDown .3s var(--bouncy-cubic); */
+        /* animation-delay: .2s; */
     }
-
+/* 
     a {
         filter: brightness(90%);
         text-decoration: none;
@@ -99,5 +60,5 @@
             transform: translateY(0);
             opacity: 1;
         }
-    }
+    } */
 </style>
