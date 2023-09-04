@@ -10,12 +10,24 @@
     h1,
     h2,
     h3 {
-        /* @apply font-sans; */
-        font-family: "Overpass Variable", sans-serif;
+        @apply font-sans;
     }
 
     p {
         font-family: "Source Sans 3 Variable", sans-serif;
-        /* @apply text-base; */
+        @apply text-base;
+    }
+    
+}
+
+@layer components {
+    .transition-underline {
+        @apply after:w-0 after:h-px after:content-[''] after:bg-teal-500 after:block after:transition-all hover:after:w-full after:relative after:bottom-1;
+    }
+}
+
+@layer utilities {
+    .text-base {
+        line-height: 1.3;
     }
 }
