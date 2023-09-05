@@ -1,6 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/Hero.astro';
+import { Image } from 'astro:assets';
+import PH_one from '@assets/ben-kolde-bs2Ba7t69mM-unsplash.jpg';
+import PH_two from '@assets/ilya-pavlov-OqtafYT5kTw-unsplash.jpg';
+import PH_three from '@assets/stephen-phillips-hostreviews-co-uk--zRNvl3EUdw-unsplash.jpg';
 ---
 
 <Layout 
@@ -10,13 +14,28 @@ import Hero from '@components/Hero.astro';
 	<main>
 		<Hero />
 
-		<div class="h-screen">
-
-		</div>
+		<section>
+			<div>
+				<Image class="rellax" data-rellax-speed="5" src={PH_one} alt="placeholder" />
+				<Image class="rellax" data-rellax-speed="4" src={PH_two} alt="placeholder" />
+				<Image class="rellax" data-rellax-speed="3" src={PH_three} alt="placeholder" />
+			</div>
+			<h2 class="rellax text-4xl" data-rellax-speed="2">My Work</h2>
+		</section>
 	</main>
 </Layout>
 
 <style lang="scss">
+	div {
+		display: flex;
+		justify-content: space-between;
+	}
+	img {
+		width: 30%;
+		height: 500px; object-fit: cover;
+		border-radius: 20px;	
+	}
+
 	main {
 		max-width: calc(100% - 2rem);
 		margin: auto;

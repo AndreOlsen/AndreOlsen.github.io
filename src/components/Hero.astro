@@ -1,5 +1,5 @@
-<section class="mb-12">
-    <h1 class="mt-20 rellax">
+<section class="mb-40">
+    <h1 class="mt-20 rellax" data-rellax-speed="4">
         <span class="text-base text-zinc-100 block opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_100ms_both]">
             Hej! <span class="wave animate-wave inline-block">👋</span> Mit navn er
         </span>
@@ -8,7 +8,7 @@
         </span>
     </h1>
     
-    <p class="text-slate-300 max-w-[600px] mt-20 ml-auto opacity-0 text-base animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]">
+    <p data-rellax-speed="6" class="rellax text-slate-300 max-w-[600px] mt-20 ml-auto opacity-0 text-lg animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]">
         Jeg er en <mark>Full Stack Developer</mark>, og min lidenskab ligger i at skabe enestående
         og brugervenlige oplevelser på nettet. I øjeblikket finder du mig hos 
         <a class="text-teal-500 inline-block transition-underline" href="https://adtention.dk/" target="_blank" rel="noopener">Adtention.</a>, 
@@ -24,15 +24,9 @@
 
 	mark {
         @apply bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent font-bold;
-        /* background-image: var(--accent-orange); */
 	}
 
     html[data-theme="light"] mark {
         filter: invert(1);    
     }
 </style>
-
-<script>
-	import Rellax from 'rellax/rellax.js';
-	var rellax = new Rellax('.rellax');
-</script>

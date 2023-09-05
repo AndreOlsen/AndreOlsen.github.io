@@ -23,5 +23,8 @@
     "sass": "^1.66.1",
     "tailwindcss": "^3.3.3",
     "tailwindcss-fluid-type": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/rellax": "^1.7.4"
   }
 }

@@ -7,4 +7,9 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://andreolsen.github.io',
   integrations: [sitemap(), tailwind()],
+  vite: {
+    ssr: {
+      noExternal: ['rellax'],
+    }
+  }
 });
