@@ -21,16 +21,15 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-stone-900 text-white">
+	<body class="bg-stone-900 dark:text-slate-200">
 		<div class="background-gradient"></div>
 
-		<div class="page-wrapper max-w-5xl mx-auto my-0">
-			<Header />
+		<Header />
 
-			<slot />
+		<slot />
 
-			<Footer />
-		</div>
+		<Footer />
+
 	</body>
 </html>
 
@@ -61,10 +60,6 @@ const { title, description } = Astro.props;
 	[data-theme="dark"] {
 		--clr-bg: var(--clr-black);
 		--clr-fg: var(--clr-white);
-	}
-
-	body {
-
 	}
 
 	.background-gradient {
