@@ -1,6 +1,7 @@
 ---
 import Icon from 'astro-icon'
 ---
+
 <nav class="flex gap-4">
     <a href="https://github.com/AndreOlsen" aria-label="Se min github" target="_blank">
         <Icon name="mdi:github" />
@@ -15,13 +16,10 @@ import Icon from 'astro-icon'
 
 <style lang="scss">
     [astro-icon] {
-        width: 30px;
+        @apply w-8;
     }
 
     a {
-        color: var(--clr-fg);
-        text-decoration: none;
-        display: inline-block;
         transition: all .2s var(--bouncy-cubic);
         filter: brightness(80%);
 
