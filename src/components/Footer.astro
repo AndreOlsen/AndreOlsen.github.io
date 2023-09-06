@@ -4,8 +4,8 @@ import Socials from '@components/Socials.astro';
 const curYear = new Date().getFullYear();
 ---
 
-<footer class="flex justify-between items-center flex-wrap px-[3%] pb-6 pt-12">
+<footer class="flex flex-col gap-4 pb-3 pt-10 items-center min-h-16">
     <Socials />
 
-    <p>&copy; {curYear} André Winther Olsen</p>
+    <p>Designed & Made by <mark class="bg-transparent text-teal-500">André Winther Olsen</mark></p>
 </footer>
