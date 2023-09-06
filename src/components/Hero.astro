@@ -1,9 +1,6 @@
----
-import Icon from "astro-icon";
----
-<section class="h-screen flex gap-24 items-center justify-between">
-    <div class="max-w-[750px]">
-        <h1>
+<section class="h-screen flex gap-14 lg:gap-24 items-center justify-center lg:justify-between flex-col lg:flex-row">
+    <div class="lg:max-w-[750px]">
+        <h1 class="mb-4">
             <span class="text-base text-zinc-100 block opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_100ms_both]">
                 Hej! <span class="wave animate-wave inline-block">👋</span> Mit navn er
             </span>
@@ -21,7 +18,7 @@ import Icon from "astro-icon";
     </div>
 
 
-    <div class="flex flex-wrap justify-around gap-10">
+    <div class="flex flex-wrap justify-around gap-5">
         <div class="skill-chip rellax" data-rellax-speed="7">
             HTML
         </div>
@@ -61,7 +58,7 @@ import Icon from "astro-icon";
     }
 
     .skill-chip {
-        @apply px-6 py-2 -rotate-12 rounded-3xl bg-slate-700 text-teal-500;
+        @apply px-6 py-2 rounded-3xl bg-slate-700 text-teal-500;
     }
 
 	mark {

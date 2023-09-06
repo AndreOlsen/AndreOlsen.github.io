@@ -1,12 +1,40 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Icon from "astro-icon";
+import { Image } from "astro:assets";
+import Milo from "@assets/Milo.jpeg";
+import Milo1 from "@assets/Milo1.jpeg";
+import Milo2 from "@assets/Milo2.jpeg";
 ---
 
 <Layout 
     title="404"
     description="404 - Siden findes ikke."
 >
-    <main>
-        <h1>404</h1>
+    <main class="px-[5%] h-[calc(100vh-6rem)] flex flex-col lg:flex-row justify-center items-center lg:justify-around">
+        <section class="lg:max-w-sm flex items-center flex-col">
+            <h1 class="text-9xl">404</h1>
+
+            <p class="text-center">
+                Beklager, siden findes ikke. <br />
+                Så her er nogle billeder af min hund, Milo
+            </p>
+
+            <a href="/" class="animate-underline text-teal-500">
+                tilbage
+            </a>
+        </section>
+
+        <section class="flex flex-row flex-wrap gap-10 justify-around mt-20">
+            <Image src={Milo} alt="Min hund, Milo" class="animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]" />
+            <Image src={Milo1} alt="Min hund, Milo" class="animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_400ms_both]" />
+            <Image src={Milo2} alt="Min hund, Milo" class="animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_500ms_both]" />
+        </section>
     </main>
 </Layout>
+
+<style>
+    img {
+        @apply w-1/3 lg:max-w-[250px] rounded-lg;
+    }
+</style>

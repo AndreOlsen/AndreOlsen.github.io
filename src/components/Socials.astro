@@ -1,26 +1,19 @@
 ---
 import Icon from 'astro-icon'
 ---
-<nav>
+<nav class="flex gap-4">
     <a href="https://github.com/AndreOlsen" aria-label="Se min github" target="_blank">
         <Icon name="mdi:github" />
     </a>
-    <!-- <span>/</span> -->
     <a href="https://dk.linkedin.com/in/andre-w-olsen" aria-label="Se min linkedin" target="_blank">
         <Icon name="mdi:linkedin" />
     </a>
-    <!-- <span>/</span> -->
     <a href="https://codepen.io/Andr-Olsen" aria-label="Se min codepen" target="_blank">
         <Icon name="mdi:codepen" />
     </a>
 </nav>
 
 <style lang="scss">
-    nav {
-        display: flex;
-        gap: 1rem;
-    }
-
     [astro-icon] {
         width: 30px;
     }
