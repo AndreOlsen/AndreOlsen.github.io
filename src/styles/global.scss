@@ -24,6 +24,10 @@
     .transition-underline {
         @apply after:w-0 after:h-px after:content-[''] after:bg-teal-500 after:block after:transition-all hover:after:w-full after:relative after:bottom-1;
     }
+
+    .scrolled {
+        @apply -translate-y-24; 
+    }
 }
 
 @layer utilities {

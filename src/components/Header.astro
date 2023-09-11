@@ -4,10 +4,10 @@ import Navigation from "@components/Navigation.astro";
 const email = 'ao.andreolsen@gmail.com';
 ---
 
-<header class="flex justify-between items-center px-[3%] h-16">
+<header id="header" class="flex fixed w-full justify-between items-center px-[3%] h-16 transition-transform duration-700">
     <a class="email" title="Send mig en email!" href=`mailto:${email}`>
         <svg id="email-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14">
-            <path 
+            <path
                 fill="none" 
                 stroke="currentColor" 
                 stroke-linecap="round" 
@@ -78,3 +78,23 @@ const email = 'ao.andreolsen@gmail.com';
         }
     }
 </style>
+
+<script is:inline>
+    const header = document.getElementById('header');
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY > lastScrollY) {
+            // User scrolled down
+            header.classList.add('scrolled');
+        } else {
+            // User scrolled up or didn't scroll
+            header.classList.remove('scrolled');
+        }
+
+        // Update the last scroll position
+        lastScrollY = scrollY;
+    });
+</script>
