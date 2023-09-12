@@ -6,7 +6,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Overpass Variable", ...defaultTheme.fontFamily.sans],
+				'sans': ["Overpass Variable", ...defaultTheme.fontFamily.sans],
+				'expletus': ["Expletus Sans Variable"],
 			},
 			animation: {
 				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22) both',

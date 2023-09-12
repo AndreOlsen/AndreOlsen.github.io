@@ -1,19 +1,19 @@
-<section class="min-h-screen flex gap-14 lg:gap-24 items-center justify-center lg:justify-between flex-col lg:flex-row">
+<section class="min-h-screen relative flex gap-6 lg:gap-24 items-center justify-center lg:justify-between flex-col lg:flex-row">
     <div class="lg:max-w-[750px]">
-        <h1 class="mb-4">
-            <span class="text-lg text-zinc-100 block opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_100ms_both]">
+        <h1>
+            <span class="text-lg text-white leading-8 block opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_100ms_both]">
                 Hej! <span class="wave animate-wave inline-block">👋</span> mit navn er
             </span>
-            <span class="text-8xl opacity-0 text-gradient block font-bold animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_200ms_both]">
+            <span class="text-8xl leading-9 opacity-0 text-gradient block font-bold animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_200ms_both]">
                 André Olsen.
             </span>
         </h1>
         
-        <p class="rellax text-slate-300 opacity-0 text-base animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]" data-rellax-speed="7">
-            Jeg er en <mark>Full Stack Developer</mark>, og min lidenskab ligger i at skabe enestående
-            og brugervenlige oplevelser på nettet. I øjeblikket finder du mig hos 
-            <a class="text-teal-500 inline-block transition-underline" href="https://adtention.dk/" target="_blank" rel="noopener">Adtention.</a>, 
-            hvor jeg udvikler responsivt designede webløsninger.
+        <p class="rellax text-slate-400 opacity-0 text-base animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]" data-rellax-speed="7">
+            Jeg er en <mark>Full Stack Developer</mark> med ekspertise i at skabe enestående,
+            brugervenlige oplevelser på nettet. I øjeblikket finder du mig hos 
+            <a class="text-teal-300 inline-block transition-underline" href="https://adtention.dk/" target="_blank" rel="noopener">Adtention.</a>, 
+            hvor jeg udvikler (og til tider designer) responsive webløsninger.
         </p>
     </div>
 
@@ -61,6 +61,7 @@
     }
 
 	mark {
-        @apply bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent font-bold;
+        /* @apply bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent font-bold; */
+        @apply text-slate-50 bg-transparent;
 	}
 </style>
