@@ -13,6 +13,9 @@ module.exports = {
 				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22) both',
 				'wave': 'wave 2.5s infinite',
 			},
+			backgroundImage: {
+				'hero-bg': "url('src/assets/hero-background.png')",
+			},
 			keyframes: {
 				fadeInUp: {
 					'0%': {
