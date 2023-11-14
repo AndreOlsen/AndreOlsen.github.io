@@ -1,5 +1,14 @@
+---
+import { getImage } from "astro:assets";
+import backgroundImage from "@assets/hero-background.png";
+const optBackgroundImage = await getImage({ src: backgroundImage });
+---
 <section class="min-h-screen box-border flex items-center">
-    <div class="bg-hero-bg bg-cover self-start bg-no-repeat h-full w-full absolute blur-md"></div>
+    <div 
+        class="bg-cover self-start bg-no-repeat h-full w-full absolute blur-md"
+        style={`background-image: url('${optBackgroundImage.src}')`}
+    >
+    </div>
 
     <div class="px-[10%]">
         <div class="md:max-w-[700px]">
