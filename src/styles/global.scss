@@ -16,18 +16,12 @@
 
     p {
         font-family: "Source Sans 3 Variable", sans-serif;
-        /* @apply text-base; */
     }
-    
 }
 
 @layer components {
     .transition-underline {
         @apply after:w-0 after:h-px after:content-[''] after:bg-teal-500 after:block after:transition-all after:duration-300 hover:after:w-full after:relative after:bottom-1;
-    }
-
-    .scrolled {
-        @apply -translate-y-24; 
     }
 }
 

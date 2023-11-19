@@ -54,6 +54,10 @@ const { title, description } = Astro.props;
 		--bouncy-cubic: cubic-bezier(.48, -.38, .41, 1.22);
 	}
 
+	html {
+		scroll-behavior: smooth;
+	}
+
 	[data-theme="light"] {
 		--clr-bg: var(--clr-white);
 		--clr-fg: var(--clr-black);
