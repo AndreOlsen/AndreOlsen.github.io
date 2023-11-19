@@ -3,18 +3,49 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/Hero.astro';
 import AboutMe from '@components/AboutMe.astro';
 import { Image } from 'astro:assets';
-import PH_one from '@assets/ben-kolde-bs2Ba7t69mM-unsplash.jpg';
-import PH_two from '@assets/ilya-pavlov-OqtafYT5kTw-unsplash.jpg';
-import PH_three from '@assets/stephen-phillips-hostreviews-co-uk--zRNvl3EUdw-unsplash.jpg';
+import Me from "@assets/andre-olsen.jpeg";
 ---
 
 <Layout 
 	title="André Olsen"
 	description="Portfolio til André Winther Olsen, full stack udvikler med speciale i PHP."
 >
-	<main>
-		<Hero />
+	<div class="max-w-screen-xl mx-auto py-24 flex justify-between gap-10 h-[80vh]">
+		<header class="w-1/2">
+			<div class="flex gap-5 items-center">
+				<Image class="w-1/5 rounded-full h-full" src={Me} alt={'Billede af André Winther Olsen, full stack udvikler.'} />
 
+				<h1>
+					<span class="text-lg text-white leading-8 block opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_100ms_both]">
+						Hej! <span class="wave animate-wave inline-block">👋</span> mit navn er
+					</span>
+
+					<span class="text-6xl leading-9 opacity-0 text-gradient block font-bold animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_200ms_both]">
+						André Olsen.
+					</span>
+				</h1>
+			</div>
+
+			<p>Full Stack Udvikler</p>
+            
+            <p class="text-slate-300 opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]">
+                Skaber enestående og brugervenlige oplevelser på nettet. 
+            </p>
+		</header>
+
+		<main class="w-1/2">
+			<p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
+            </p>
+		</main>
+
+		<!-- <Hero /> -->
+	
 		<!-- <AboutMe /> -->
-	</main>
+	</div>
 </Layout>
+
+<style lang="scss">
+	
+</style>
