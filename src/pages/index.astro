@@ -92,7 +92,9 @@ import Me from "@assets/andre-olsen.jpeg";
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
             </section>
 
-			<footer class="pt-10 pl-10">
+			<footer class="lg:pl-10 lg:block pt-10 flex flex-col items-center">
+				<Socials />
+
 				<a href="https://github.com/AndreOlsen/AndreOlsen.github.io" target="_blank" class="hover:text-teal-500">
 					designed & made by André Winther Olsen.
 				</a>
@@ -106,5 +108,7 @@ import Me from "@assets/andre-olsen.jpeg";
 </Layout>
 
 <style lang="scss">
-	
+	nav a {
+		width: fit-content;
+	}
 </style>
