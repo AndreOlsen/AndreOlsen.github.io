@@ -12,7 +12,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html> 
-<html lang="da" data-theme="dark">
+<html lang="da">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,9 +24,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-[#2C3531] text-[#D1E8E2]">
-		<!-- <div class="background-gradient"></div> -->
-
+	<body class="bg-[#17252A] text-[#D1E8E2]">
 		<!-- <Header /> -->
 
 		<slot />
@@ -56,26 +54,6 @@ const { title, description } = Astro.props;
 
 	html {
 		scroll-behavior: smooth;
-	}
-
-	[data-theme="light"] {
-		--clr-bg: var(--clr-white);
-		--clr-fg: var(--clr-black);
-	}
-
-	[data-theme="dark"] {
-		--clr-bg: var(--clr-black);
-		--clr-fg: var(--clr-white);
-	}
-
-	.background-gradient {
-		@apply h-4/5 w-full absolute -z-10 opacity-10 blur-3xl;
-		background: linear-gradient(
-			-15deg,
-			transparent 20%,
-			rgb(var(--clr-teal)) 60%,
-			rgb(70, 143, 197) 80%
-		);
 	}
 
 	* {

@@ -1,0 +1,110 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Socials from '@components/Socials.astro';
+import Icon from 'astro-icon'
+---
+
+<Layout
+	title="André Olsen"
+	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
+>
+    <div class="m-10 lg:m-20">
+        <main class="lg:text-7xl text-xl font-quicksand font-extralight">
+            <!-- <h1 class="inline font-medium">André Olsen</h1> er en erfaren full-stack developer @ <a href="https://adtention.dk" target="_blank">Adtention</a>
+            med ekspertise i at skabe enestående <a href="/projects" data-replace="projekter"><span>oplevelser</span></a> på nettet. -->
+
+            <h1 class="inline font-medium">André Olsen</h1> er en erfaren full-stack developer @ <a href="https://adtention.dk" target="_blank">Adtention</a> som forvandler visioner til online virkelighed.
+            Tag en tur gennem mine <a href="/projects">projekter</a>, lær mere <a href="/about">om mig</a> og få indblik i min <a href="/resume">karriere</a>.
+        </main>
+
+        <footer class="mt-6">
+            <nav class="flex justify-end gap-3">
+                <a href="https://github.com/AndreOlsen" title="GitHub" aria-label="Se min github" target="_blank" rel="noopener">
+                    <Icon name="mdi:github" />
+                </a>
+                <a href="https://dk.linkedin.com/in/andre-w-olsen" title="LinkedIn" aria-label="Se min linkedin" target="_blank" rel="noopener">
+                    <Icon name="mdi:linkedin" />
+                </a>
+                <a href="https://codepen.io/Andr-Olsen" title="Codepen" aria-label="Se min codepen" target="_blank" rel="noopener">
+                    <Icon name="mdi:codepen" />
+                </a>
+                <a href="mailto:ao.andreolsen@gmail.com" title="Email" aria-label="Send mig en email" target="_blank" rel="noopener">
+                    <Icon name="ic:round-email" />
+                </a>
+            </nav>
+        </footer>
+    </div>
+</Layout>
+
+<style lang="scss">
+    [astro-icon] {
+        @apply w-10;
+    }
+
+    nav {
+        a {
+            transition: all .2s var(--bouncy-cubic);
+            color: #D1E8E2;
+
+            &:hover {
+                transform: translateY(-2px);
+                /* color: rgb(var(--clr-teal)); */
+                color: #FFCB9A;
+            }
+        }
+    }
+
+    main a {
+        color: #FFCB9A;
+    }
+
+    /* main a {
+        color: #FFCB9A;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+        }
+
+        &::after {
+            content: attr(data-replace);
+            transform-origin: 100% 50%;
+            transform: translate3d(200%, 0, 0);
+            transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        &:focus::after,
+        &:hover::after {
+            transform: translate3d(0, 0, 0);
+        }
+
+        &::before {
+            background-color: #FFCB9A;
+            height: 2px;
+            bottom: 0;
+            transform-origin: 100% 50%;
+            transform: scaleX(0);
+        }
+
+        &:focus::before,
+        &:hover::before {
+            transform-origin: 0% 50%;
+            transform: scaleX(1);
+        }
+
+        &:hover span {
+            transform: translate3d(-200%, 0, 0);
+        }
+
+        span {
+            display: inline-block;
+            transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+    } */
+</style>
