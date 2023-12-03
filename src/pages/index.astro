@@ -1,113 +1,62 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Socials from '@components/Socials.astro';
-import Hero from '@components/Hero.astro';
-import AboutMe from '@components/AboutMe.astro';
-import { Image } from 'astro:assets';
-import Me from "@assets/andre-olsen.jpeg";
+import Icon from 'astro-icon';
 ---
 
-<Layout 
+<Layout
 	title="André Olsen"
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-	<div class="lg:max-w-screen-xl lg:px-12 lg:mx-auto flex flex-col lg:flex-row lg:justify-between lg:gap-10 px-6 py-10 lg:py-0">
-		<header class="lg:w-1/2 lg:sticky lg:top-0 max-h-screen lg:py-24 flex flex-col justify-between">
-			<div>
-				<div class="flex gap-5 lg:items-center flex-col lg:flex-row">
-					<Image class="lg:w-1/6 self-center w-1/3 rounded-full h-full opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_50ms_both]" src={Me} alt={'Billede af André Winther Olsen, full stack udvikler.'} />
-					
-					<div>
-						<p class="text-lg text-white leading-8 block opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_100ms_both]">
-							Hej! <span class="wave animate-wave inline-block">👋</span> mit navn er
-						</p>
-	
-						<h1 class="text-5xl opacity-0 text-gradient block font-bold animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_200ms_both]">
-							<a href="">André Olsen</a>
-						</h1>
-					</div>
-				</div>
+    <div class="h-screen flex flex-col flex-grow p-[5%]">
+        <main class="text-6xl font-quicksand font-extralight flex-grow">
+            <h1 class="inline font-semibold">André Winther Olsen</h1> er en 2 år+ erfaren full-stack developer @ 
+            <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">adtention</a> 
+            som forvandler visioner til enestående, online virkelighed. Tag en tur gennem mine 
+            <a href="/projects" class="text-pale-orange hover-underline" aria-label="Link til André Olsens projekter">projekter</a>, 
+            lær mere <a href="/about" class="text-pale-orange hover-underline" aria-label="Link til om André Olsen">om mig</a> 
+            og få indblik i min <a href="/resume" class="text-pale-orange hover-underline" aria-label="Link til André Olsens karriere">karriere</a>.
+        </main>
 
-				<h2>Full Stack Udvikler</h2>
-				
-				<p class="text-slate-300 opacity-0 animate-[fadeInUp_300ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]">
-					Skaber enestående og brugervenlige oplevelser på nettet. 
-				</p>
-			</div>
-
-			<nav class="lg:flex flex-col gap-2 hidden">
-				<a href="#about">Om</a>
-				<a href="#experience">Erfaring</a>
-				<a href="#projects">Projekter</a>
-			</nav>
-
-			<Socials />
-		</header>
-
-		<main class="lg:w-1/2 py-24">
-			<section id="about" aria-label="Om mig" class="scroll-m-24">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-            </section>
-
-			<section id="experience" aria-label="Arbejds erfaring" class="pt-24">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, qui accusantium tenetur suscipit architecto animi nesciunt ad molestiae dicta odio impedit aliquid ducimus, doloribus similique est. Vitae, adipisci. Facilis, praesentium?
-            </section>
-
-			<footer class="lg:pl-10 lg:block pt-10 flex flex-col items-center">
-				<Socials />
-
-				<a href="https://github.com/AndreOlsen/AndreOlsen.github.io" target="_blank" class="hover:text-teal-500">
-					designed & made by André Winther Olsen.
-				</a>
-			</footer>
-		</main>
-
-		<!-- <Hero /> -->
-	
-		<!-- <AboutMe /> -->
-	</div>
+        <footer class="mt-6">
+            <nav class="flex justify-center items-center gap-10">
+                <a href="https://github.com/AndreOlsen" title="GitHub" aria-label="Se min github" target="_blank" rel="noopener">
+                    <Icon name="mdi:github" />
+                </a>
+                <a href="https://dk.linkedin.com/in/andre-w-olsen" title="LinkedIn" aria-label="Se min linkedin" target="_blank" rel="noopener">
+                    <Icon name="mdi:linkedin" />
+                </a>
+                <a href="https://codepen.io/Andr-Olsen" title="Codepen" aria-label="Se min codepen" target="_blank" rel="noopener">
+                    <Icon name="mdi:codepen" />
+                </a>
+                <a href="mailto:ao.andreolsen@gmail.com" title="Email" aria-label="Send mig en email" target="_blank" rel="noopener">
+                    <Icon name="ic:round-email" />
+                </a>
+            </nav>
+        </footer>
+    </div>
 </Layout>
 
 <style lang="scss">
-	nav a {
-		width: fit-content;
-	}
+    [astro-icon] {
+        @apply w-10;
+    }
+
+    a {
+        transition: all .2s var(--bouncy-cubic);
+
+        &:hover,
+        &:focus {
+            transform: translateY(-2px);
+        }
+    }
+
+    nav a {        transition: all .2s var(--bouncy-cubic);
+        color: #D1E8E2;
+
+        &:hover,
+        &:focus {
+            color: #FFCB9A;
+        }
+    }
 </style>

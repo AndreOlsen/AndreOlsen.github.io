@@ -1,45 +1,74 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Icon from "astro-icon";
-import { Image } from "astro:assets";
-import Milo from "@assets/Milo.jpeg";
-import Milo1 from "@assets/Milo1.jpeg";
-import Milo2 from "@assets/Milo2.jpeg";
-import Milo3 from "@assets/Milo3.jpeg";
 ---
 
 <Layout 
     title="404"
     description="404 - Siden findes ikke."
 >
-    <main class="px-[5%] min-h-[calc(100vh-8rem)] grid items-center justify-center">
-        <section class="flex flex-col justify-center items-center animate-[fadeInUp_500ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]">
-            <h1 class="text-9xl font-expletus">404</h1>
 
-            <p class="text-center leading-none">
-                siden findes ikke.
-            </p>
+    <div class="h-screen flex flex-col flex-grow">
+        <main class="px-[5%] flex justify-center items-center flex-grow">
+            <section class="flex flex-col justify-center items-center animate-[fadeInUp_500ms_cubic-bezier(0.645,0.045,0.355,1)_1_300ms_both]">
+                <h1 class="text-9xl font-expletus">
+                    404
+                </h1>
 
-            <a href="/" class="text-teal-500 inline-block mt-4">
-                <span class="flex gap-1 items-center">
-                    <Icon name="ion:arrow-back" width="25px"/>
-                    tilbage
-                </span>
-            </a>
-        </section>
+                <p class="text-center leading-none">
+                    siden findes ikke.
+                </p>
 
-<!--         <section class="flex flex-col lg:flex-row lg:h-96">
-            <Image src={Milo} alt="min hund, Milo" class="top-20 hidden lg:block" />
-            <Image src={Milo1} alt="min hund, Milo" class="bottom-24 left-80 hidden lg:block" />
-            <Image src={Milo3} alt="min hund, Milo" class="bottom-24 right-80 hidden lg:block" />
-            <Image src={Milo2} alt="min hund, Milo" class="lg:top-20" />
-        </section> -->
-    </main>
+                <a href="#" id="go-back" class="text-[#FFCB9A] mt-4">
+                    <span class="flex gap-1 items-center">
+
+                        tilbage
+                    </span>
+                </a>
+            </section>
+        </main>
+
+        <footer class="mt-6">
+            <nav class="flex justify-end gap-3">
+                <a href="https://github.com/AndreOlsen" title="GitHub" aria-label="Se min github" target="_blank" rel="noopener">
+                    <Icon name="mdi:github" />
+                </a>
+                <a href="https://dk.linkedin.com/in/andre-w-olsen" title="LinkedIn" aria-label="Se min linkedin" target="_blank" rel="noopener">
+                    <Icon name="mdi:linkedin" />
+                </a>
+                <a href="https://codepen.io/Andr-Olsen" title="Codepen" aria-label="Se min codepen" target="_blank" rel="noopener">
+                    <Icon name="mdi:codepen" />
+                </a>
+                <a href="mailto:ao.andreolsen@gmail.com" title="Email" aria-label="Send mig en email" target="_blank" rel="noopener">
+                    <Icon name="ic:round-email" />
+                </a>
+            </nav>
+        </footer>
+    </div>
+
 </Layout>
 
-<!-- <style>
-    img {
-        @apply lg:w-1/3 rounded-lg relative object-cover;
-        filter: brightness(50%);
+<style lang="scss">
+    [astro-icon] {
+        @apply w-10;
     }
-</style> -->
+
+    nav {   
+        a {
+            transition: all .2s var(--bouncy-cubic);
+            color: #D1E8E2;
+
+            &:hover {
+                transform: translateY(-2px);
+                /* color: rgb(var(--clr-teal)); */
+                color: #FFCB9A;
+            }
+        }
+    }
+</style>
+
+<script>
+    document.getElementById('go-back')?.addEventListener('click', function () {
+        window.history.go(-1);
+    });
+</script>

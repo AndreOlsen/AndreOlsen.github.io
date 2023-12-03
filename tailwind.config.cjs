@@ -1,23 +1,21 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			fontFamily: {
-				'sans': ["Source Sans 3 Variable", ...defaultTheme.fontFamily.sans],
 				'expletus': ["Expletus Sans Variable"],
-				'overpass': ["Overpass Variable"],
-				'outfit': ["Outfit Variable"],
 				'quicksand': ["Quicksand Variable"],
+				'mont': ["Montserrat Variable"]
+			},
+			colors: {
+				'pale-orange': '#FFCB9A',
+				'grey-blue': '#17252A',
+				'cyan-green': '#D1E8E2',
 			},
 			animation: {
 				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22) both',
 				'wave': 'wave 2.5s infinite',
-			},
-			backgroundImage: {
-				'hero-bg': "url('src/assets/hero-background.png')",
 			},
 			keyframes: {
 				fadeInUp: {
