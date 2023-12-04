@@ -13,6 +13,9 @@ module.exports = {
 				'grey-blue': '#17252A',
 				'cyan-green': '#D1E8E2',
 			},
+			maxWidth: {
+				'content': '83rem',
+			},
 			animation: {
 				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22) both',
 				'wave': 'wave 2.5s infinite',
