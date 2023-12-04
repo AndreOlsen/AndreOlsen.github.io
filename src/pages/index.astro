@@ -1,14 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Socials from '@components/Socials.astro';
-import Icon from 'astro-icon';
+import Footer from '@components/Footer.astro';
 ---
 
 <Layout
 	title="André Olsen"
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-    <div class="h-screen flex flex-col justify-center p-[5%]">
+    <div class="h-screen flex flex-col justify-center items-center p-[5%]">
         <main class="text-6xl max-w-content font-quicksand font-extralight">
             <h1 class="inline font-semibold">André Winther Olsen</h1> er en 2 år+ erfaren full-stack developer @ 
             <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">adtention</a> 
@@ -18,30 +17,11 @@ import Icon from 'astro-icon';
             og få indblik i min <a href="/resume" class="text-pale-orange hover-underline" aria-label="Link til André Olsens karriere">karriere</a>.
         </main>
 
-        <footer class="mt-12">
-            <nav class="flex justify-center items-center gap-10">
-                <a href="https://github.com/AndreOlsen" title="GitHub" aria-label="Se min github" target="_blank" rel="noopener">
-                    <Icon name="mdi:github" />
-                </a>
-				<a href="https://codepen.io/Andr-Olsen" title="Codepen" aria-label="Se min codepen" target="_blank" rel="noopener">
-					<Icon name="mdi:codepen" />
-				</a>
-                <a href="https://dk.linkedin.com/in/andre-w-olsen" title="LinkedIn" aria-label="Se min linkedin" target="_blank" rel="noopener">
-                    <Icon name="mdi:linkedin" />
-                </a>
-                <a href="mailto:ao.andreolsen@gmail.com" title="Email" aria-label="Send mig en email" target="_blank" rel="noopener">
-                    <Icon name="ic:round-email" />
-                </a>
-            </nav>
-        </footer>
+        <Footer />
     </div>
 </Layout>
 
 <style lang="scss">
-    [astro-icon] {
-        @apply w-10;
-    }
-
     a {
         transition: all .2s var(--bouncy-cubic);
 
@@ -51,7 +31,8 @@ import Icon from 'astro-icon';
         }
     }
 
-    nav a {        transition: all .2s var(--bouncy-cubic);
+    nav a {
+        transition: all .2s var(--bouncy-cubic);
         color: #D1E8E2;
 
         &:hover,
