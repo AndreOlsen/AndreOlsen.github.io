@@ -22,30 +22,20 @@ const { title, description } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
-		<div class="h-screen flex flex-col justify-center items-center p-[5%]">
+		<div class="min-h-screen flex flex-col justify-center items-center p-[5%]">
 			<slot />
 
 			<Footer />
+
 		</div>
+		<div class="cursor"></div>
+		
 	</body>
 </html>
 
 <style is:global lang="scss">
 	:root {
 		--fontsource-display: swap;
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-		--clr-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--clr-teal)) 30%, var(--clr-white) 60%);
-		--site-width: 1000px;
-		--clr-white: #EDF0ED;
-		--clr-black: #212121;
-		--clr-sun: #FCB033;
-		--clr-moon: #DCDCDC;
-		--clr-teal: 39, 199, 171;
-		--accent-orange: radial-gradient(circle at 10% 20%, rgb(252, 251, 121) 0%, rgb(255, 200, 124) 90%);
-		--accent-teal: radial-gradient(circle at 10% 20%, rgb(39, 199, 171) 0%, rgb(70, 143, 197) 90%);
 		--bouncy-cubic: cubic-bezier(.48, -.38, .41, 1.22);
 	}
 
@@ -55,5 +45,43 @@ const { title, description } = Astro.props;
 
 	* {
 		box-sizing: border-box;
+		cursor: none;
+	}
+
+	.cursor {
+		background-color: #fff;
+		opacity: 0;
+		width: 15px;
+		height: 15px;
+		border-radius: 100%;
+		pointer-events: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transition: transform 100;
+
+		&.hover {
+			transform: scale(2.5);
+			background-color: #FFCB9A;
+			mix-blend-mode: difference;
+		}
 	}
 </style>
+
+<script>
+	const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
+	const anchors: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
+
+	document.addEventListener('mousemove', (e: MouseEvent) => {
+		const mouseX = e.clientX;
+		const mouseY = e.clientY;
+
+		cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+		cursor.style.opacity = '1';
+	});
+
+	anchors.forEach((anchor: HTMLAnchorElement) => {
+		anchor.addEventListener('mouseover', () => cursor.classList.add('hover'));
+		anchor.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+	});
+</script>

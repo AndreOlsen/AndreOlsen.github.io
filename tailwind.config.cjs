@@ -47,7 +47,11 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require('tailwindcss-fluid-type'),
+		require('tailwindcss-fluid-type')({
+			settings: {
+				fontSizeMin: 1.2,
+			}
+		}),
 		plugin(({ matchUtilities, theme }) => {
 			matchUtilities({
 				"animation-delay": (value) => {
