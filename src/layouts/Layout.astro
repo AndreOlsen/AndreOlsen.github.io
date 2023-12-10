@@ -1,5 +1,4 @@
 --- 
-import CommonHead from '@components/CommonHead.astro';
 import Footer from '@components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
 import '@styles/global.scss';
@@ -15,21 +14,25 @@ const { title, description } = Astro.props;
 <!DOCTYPE html> 
 <html lang="da">
 	<head>
-		<CommonHead />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
+		<div class="cursor"></div>
+
 		<div class="min-h-screen flex flex-col justify-center items-center p-[5%]">
 			<slot />
 
 			<Footer />
-
 		</div>
-		<div class="cursor"></div>
-		
 	</body>
 </html>
 
@@ -39,49 +42,71 @@ const { title, description } = Astro.props;
 		--bouncy-cubic: cubic-bezier(.48, -.38, .41, 1.22);
 	}
 
-	html {
-		scroll-behavior: smooth;
-	}
-
 	* {
 		box-sizing: border-box;
 		cursor: none;
 	}
 
+	html {
+		scroll-behavior: smooth;
+	}
+
 	.cursor {
-		background-color: #fff;
+		--cursor-y: 0;
+		--cursor-x: 0;
+		background-color: #66FCF1;
 		opacity: 0;
-		width: 15px;
-		height: 15px;
+		width: 20px;
+		height: 20px;
 		border-radius: 100%;
 		pointer-events: none;
+		user-select: none;
 		position: fixed;
-		top: 0;
-		left: 0;
-		transition: transform 100;
+		top: var(--cursor-y);
+		left: var(--cursor-x);
+		z-index: 999;
+		will-change: transform, top, left;
+		transition: transform .4s cubic-bezier(.23,1,.32,1);
 
 		&.hover {
-			transform: scale(2.5);
+			transform: scale(3.5);
 			background-color: #FFCB9A;
 			mix-blend-mode: difference;
+		}
+
+		&.active {
+			opacity: 1;
 		}
 	}
 </style>
 
 <script>
-	const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
-	const anchors: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
+	const setupCursor = () => {
+		const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
+		const anchors: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
 
-	document.addEventListener('mousemove', (e: MouseEvent) => {
-		const mouseX = e.clientX;
-		const mouseY = e.clientY;
+		const updateCursorPosition = (e: MouseEvent) => {
+			const x = e.clientX - 10;
+			const y = e.clientY - 10;
 
-		cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-		cursor.style.opacity = '1';
-	});
+			cursor.style.setProperty('--cursor-y', `${y}px`);
+			cursor.style.setProperty('--cursor-x', `${x}px`);
+			cursor.classList.add('active');
+		}
 
-	anchors.forEach((anchor: HTMLAnchorElement) => {
-		anchor.addEventListener('mouseover', () => cursor.classList.add('hover'));
-		anchor.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+		document.documentElement.addEventListener('mousemove', updateCursorPosition);
+		document.documentElement.addEventListener("mouseenter", updateCursorPosition);
+		document.documentElement.addEventListener("mouseleave", () => cursor.classList.remove('active'));
+
+		// Enable hover effects for the cursor.
+		anchors.forEach((anchor: HTMLAnchorElement) => {
+			anchor.addEventListener('mouseover', () => cursor.classList.add('hover'));
+			anchor.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+		});
+	}
+
+	document.addEventListener('astro:page-load', () => {
+		console.log('astro:page-load');
+		setupCursor();
 	});
 </script>

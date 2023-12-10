@@ -7,19 +7,18 @@ import Footer from '@components/Footer.astro';
 	title="André Olsen"
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-    <div class="h-screen flex flex-col justify-center items-center p-[5%]">
-        <main class="text-6xl max-w-content w-full font-quicksand flex flex-wrap justify-between gap-8">
+    <main class="text-6xl max-w-content w-full font-quicksand grid grid-cols-4 gap-3">
 
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            
-        </main>
-
-        <Footer />
-    </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        
+    </main>
 </Layout>
 
 <style lang="scss">
@@ -43,8 +42,8 @@ import Footer from '@components/Footer.astro';
     }
 
     main div {
-        width: 25%;
         height: 200px;
         background-color: #FFCB9A;
+        @apply rounded-md; 
     }
 </style>
