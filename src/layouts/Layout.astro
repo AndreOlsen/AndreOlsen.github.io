@@ -28,7 +28,7 @@ const { title, description } = Astro.props;
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor"></div>
 
-		<div class="min-h-screen flex flex-col justify-center items-center p-[5%]">
+		<div class="min-h-screen flex flex-col justify-center items-center p-[10%]">
 			<slot />
 
 			<Footer />
@@ -38,7 +38,6 @@ const { title, description } = Astro.props;
 
 <style is:global lang="scss">
 	:root {
-		--fontsource-display: swap;
 		--bouncy-cubic: cubic-bezier(.48, -.38, .41, 1.22);
 	}
 

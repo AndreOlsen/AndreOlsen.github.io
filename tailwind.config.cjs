@@ -5,11 +5,6 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
-			fontFamily: {
-				'expletus': ["Expletus Sans Variable"],
-				'quicksand': ["Quicksand Variable"],
-				'mont': ["Montserrat Variable"]
-			},
 			colors: {
 				'pale-orange': '#FFCB9A',
 				'grey-blue': '#17252A',
