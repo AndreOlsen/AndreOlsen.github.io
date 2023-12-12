@@ -12,6 +12,7 @@ module.exports = {
 			},
 			maxWidth: {
 				'content': '83rem',
+				'reading': '30em',
 			},
 			animation: {
 				'fade-in-up': 'fadeInUp .3s cubic-bezier(.48, -.38, .41, 1.22) both',

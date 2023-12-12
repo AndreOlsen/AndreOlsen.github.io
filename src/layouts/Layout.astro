@@ -28,7 +28,7 @@ const { title, description } = Astro.props;
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor"></div>
 
-		<div class="min-h-screen flex flex-col justify-center items-center p-[10%]">
+		<div class="min-h-screen flex flex-col justify-center items-center p-[5vw] lg:p-[10vw]">
 			<slot />
 
 			<Footer />
@@ -49,6 +49,15 @@ const { title, description } = Astro.props;
 	html {
 		scroll-behavior: smooth;
 	}
+
+	a {
+        transition: all .2s var(--bouncy-cubic);
+
+        &:hover,
+        &:focus {
+            transform: translateY(-2px);
+        }
+    }
 
 	.cursor {
 		--cursor-y: 0;
@@ -104,8 +113,9 @@ const { title, description } = Astro.props;
 		});
 	}
 
-	document.addEventListener('astro:page-load', () => {
-		console.log('astro:page-load');
-		setupCursor();
-	});
+	if(!window.matchMedia("(pointer: coarse)").matches) {
+		document.addEventListener('astro:page-load', () => {
+			setupCursor();
+		});
+	}
 </script>
