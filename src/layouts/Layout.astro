@@ -26,7 +26,7 @@ const { title, description } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
-		<div class="cursor"></div>
+		<div class="cursor" transition:persist></div>
 
 		<div class="min-h-screen flex flex-col justify-center items-center p-[5vw] lg:p-[10vw]">
 			<slot />
@@ -82,33 +82,74 @@ const { title, description } = Astro.props;
 </style>
 
 <script>
-	const setupCursor = () => {
-		const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
-		const anchors: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
+	(function() {
+		if (!window.matchMedia("(pointer: coarse)").matches) {
+			const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
+			let debounceTimer: NodeJS.Timeout;
 
-		const updateCursorPosition = (e: MouseEvent) => {
-			const x = e.clientX - 10;
-			const y = e.clientY - 10;
+			/**
+			 * Update the position of the custom cursor.
+			 * @param e 
+			 */
+			const updatePosition = (e: MouseEvent) => {
+				if (debounceTimer) clearTimeout(debounceTimer);
 
-			cursor.style.setProperty('--cursor-y', `${y}px`);
-			cursor.style.setProperty('--cursor-x', `${x}px`);
-			cursor.classList.add('active');
+				debounceTimer = setTimeout(() => {
+					const x = e.clientX - 10;
+					const y = e.clientY - 10;
+
+					cursor.style.setProperty('--cursor-y', `${y}px`);
+					cursor.style.setProperty('--cursor-x', `${x}px`);
+					cursor.classList.add('active');
+				}, 10);
+			}
+
+			/**
+			 * Toggle hover state of the cursor.
+			 * @param isHover 
+			 */
+			const toggleHoverState = (isHover: boolean) => {
+				cursor.classList.toggle('hover', isHover);
+			};
+
+			/**
+			 * Enable custom hover states on defined hoverables.
+			 * @param hoverables 
+			 */
+			const setHoverables = () => {
+				const hoverables = document.querySelectorAll('a');
+
+				hoverables.forEach((hoverable) => {
+					hoverable.addEventListener('mouseover', () => toggleHoverState(true));
+					hoverable.addEventListener('mouseleave', () => toggleHoverState(false));
+				});
+			};
+
+			// Event delegation for hover state
+			document.addEventListener('mouseover', (e: MouseEvent) => {
+				if (e.target instanceof Element && e.target.matches('a')) {
+					toggleHoverState(true);
+				}
+			});
+
+			document.addEventListener('mouseleave', (e: MouseEvent) => {
+				if (e.target instanceof Element && e.target.matches('a')) {
+					toggleHoverState(false);
+				}
+			});
+
+			document.documentElement.addEventListener('mousemove', updatePosition);
+			document.documentElement.addEventListener("mouseenter", updatePosition);
+			document.documentElement.addEventListener("mouseleave", () => cursor.classList.remove('active'));
+
+			setHoverables();
+
+			const reinitializeCursor = () => {
+				toggleHoverState(false);
+				setHoverables(); // Reattach listeners to new elements after page load
+			};
+
+			document.addEventListener("astro:page-load", reinitializeCursor);
 		}
-
-		document.documentElement.addEventListener('mousemove', updateCursorPosition);
-		document.documentElement.addEventListener("mouseenter", updateCursorPosition);
-		document.documentElement.addEventListener("mouseleave", () => cursor.classList.remove('active'));
-
-		// Enable hover effects for the cursor.
-		anchors.forEach((anchor: HTMLAnchorElement) => {
-			anchor.addEventListener('mouseover', () => cursor.classList.add('hover'));
-			anchor.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-		});
-	}
-
-	if(!window.matchMedia("(pointer: coarse)").matches) {
-		document.addEventListener('astro:page-load', () => {
-			setupCursor();
-		});
-	}
+	})();
 </script>
