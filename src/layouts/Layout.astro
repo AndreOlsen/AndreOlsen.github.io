@@ -28,11 +28,7 @@ const { title, description } = Astro.props;
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor" transition:persist></div>
 
-		<div class="min-h-screen flex flex-col justify-center items-center p-[5vw] lg:p-[10vw]">
-			<slot />
-
-			<Footer />
-		</div>
+		<slot />
 	</body>
 </html>
 
@@ -49,8 +45,6 @@ const { title, description } = Astro.props;
 	html {
 		scroll-behavior: smooth;
 	}
-
-	
 
 	.cursor {
 		--cursor-y: 0;
@@ -84,24 +78,23 @@ const { title, description } = Astro.props;
 <script>
 	(function() {
 		if (!window.matchMedia("(pointer: coarse)").matches) {
-			const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
-			let debounceTimer: NodeJS.Timeout;
+			let cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
+			const DEBUG = false;
 
 			/**
 			 * Update the position of the custom cursor.
 			 * @param e 
 			 */
 			const updatePosition = (e: MouseEvent) => {
-				if (debounceTimer) clearTimeout(debounceTimer);
+				const x = e.clientX - 10;
+				const y = e.clientY - 10;
+				
+				DEBUG && console.log('Updating cursor position');
+				DEBUG && console.log('X: ' + x + ' / ' + 'Y: ' + y);
 
-				debounceTimer = setTimeout(() => {
-					const x = e.clientX - 10;
-					const y = e.clientY - 10;
-
-					cursor.style.setProperty('--cursor-y', `${y}px`);
-					cursor.style.setProperty('--cursor-x', `${x}px`);
-					cursor.classList.add('active');
-				}, 10);
+				cursor.style.setProperty('--cursor-y', `${y}px`);
+				cursor.style.setProperty('--cursor-x', `${x}px`);
+				cursor.classList.add('active');
 			}
 
 			/**
@@ -109,15 +102,18 @@ const { title, description } = Astro.props;
 			 * @param isHover 
 			 */
 			const toggleHoverState = (isHover: boolean) => {
+				DEBUG && console.log('Setting Hover State: ' + isHover);
+
 				cursor.classList.toggle('hover', isHover);
 			};
 
 			/**
 			 * Enable custom hover states on defined hoverables.
-			 * @param hoverables 
 			 */
 			const setHoverables = () => {
 				const hoverables = document.querySelectorAll('a');
+
+				DEBUG && console.log('Setting hoverable events: ' + hoverables);
 
 				hoverables.forEach((hoverable) => {
 					hoverable.addEventListener('mouseover', () => toggleHoverState(true));
@@ -126,7 +122,7 @@ const { title, description } = Astro.props;
 			};
 
 			// Event delegation for hover state
-			document.addEventListener('mouseover', (e: MouseEvent) => {
+			/* document.addEventListener('mouseover', (e: MouseEvent) => {
 				if (e.target instanceof Element && e.target.matches('a')) {
 					toggleHoverState(true);
 				}
@@ -136,7 +132,7 @@ const { title, description } = Astro.props;
 				if (e.target instanceof Element && e.target.matches('a')) {
 					toggleHoverState(false);
 				}
-			});
+			}); */
 
 			document.documentElement.addEventListener('mousemove', updatePosition);
 			document.documentElement.addEventListener("mouseenter", updatePosition);
@@ -145,8 +141,9 @@ const { title, description } = Astro.props;
 			setHoverables();
 
 			const reinitializeCursor = () => {
-				toggleHoverState(false);
-				setHoverables(); // Reattach listeners to new elements after page load
+				toggleHoverState(false); // Prevent sticky hover effect on cursor.
+				setHoverables(); // Reattach listeners to new elements after page load.
+				cursor = document.querySelector('.cursor') as HTMLElement // Re-set cursor element.
 			};
 
 			document.addEventListener("astro:page-load", reinitializeCursor);

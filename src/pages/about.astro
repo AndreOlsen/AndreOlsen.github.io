@@ -1,28 +1,32 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import AndreOlsen from '@assets/andre-olsen.jpeg';
-import Milo from '@assets/Milo.jpeg';
+import AndreOlsen from '@assets/andré-winther-olsen_transparent.png';
 import { Image } from 'astro:assets';
+import Header from '@components/Header.astro';
 ---
 
 <Layout
-	title="André Olsen"
+	title="andré."
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-    <main class="text-base max-w-reading">
+    <Header />
 
-        <Image src={AndreOlsen} alt="Billede af mig, André Winther Olsen" class="border-8 -rotate-6 w-1/2 mx-auto -translate-x-10 shadow-md h-full mb-14" />
+    <div class="min-h-screen flex flex-col justify-center items-center p-[5vw] lg:p-[9vw]">
+        <main class="text-base max-w-reading">
 
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus hic laudantium harum porro nulla nemo dolorum exercitationem perferendis quae amet, voluptate molestias accusantium quam mollitia qui dicta aliquid culpa dolor!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
-    </main>
+            <Image src={AndreOlsen} alt="Billede af André Winther Olsen" class="w-1/2 mx-auto h-full mb-14" />
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus hic laudantium harum porro nulla nemo dolorum exercitationem perferendis quae amet, voluptate molestias accusantium quam mollitia qui dicta aliquid culpa dolor!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deleniti placeat non saepe! Inventore repellat veritatis illum in officiis assumenda magnam molestias saepe debitis aperiam adipisci, quas magni tempora. Voluptatum.
+        </main>
+    </div>
 </Layout>
 
 <style lang="scss">
-    
+
 </style>
