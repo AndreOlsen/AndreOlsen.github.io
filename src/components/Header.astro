@@ -2,7 +2,7 @@
 import Navigation from "@components/Navigation.astro";
 ---
 
-<header id="header" class="flex justify-center z-50 w-full fixed transition-transform duration-500">
+<header id="header" class="flex justify-center z-50 w-full fixed transition-transform duration-500" transition:persist>
     <div class="flex w-3/4 justify-between items-center py-4">
         <a href="/" class="text-3xl" transition:name="name-logo" aria-label="Gå til forsiden" >andré.</a>
 
@@ -24,19 +24,33 @@ import Navigation from "@components/Navigation.astro";
     }
 </style>
 
-<script is:inline>
-    const header = document.getElementById('header');
-    let lastScrollY = 0;
+<script>
+    function initHeaderScroll() {
+        const header: HTMLElement = document.getElementById('header') as HTMLElement;
+        if (!header) return; // Exit if header isn't found
 
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
+        let lastScrollY = 0;
 
-        if (scrollY > lastScrollY) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        function onScroll() {
+            const scrollY = window.scrollY;
+
+            if (scrollY > lastScrollY) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollY = scrollY;
         }
 
-        lastScrollY = scrollY;
-    });
+        // Remove previous event listeners to avoid duplicates
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll);
+    }
+
+    // Initial initialization
+    initHeaderScroll();
+
+    // Reinitialize after every AstroJS page transition
+    document.addEventListener("astro:page-load", initHeaderScroll);
 </script>
