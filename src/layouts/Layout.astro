@@ -26,9 +26,11 @@ const { title, description } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
-		<div class="cursor" transition:persist></div>
+		<div class="cursor"></div>
 
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
 
@@ -77,9 +79,10 @@ const { title, description } = Astro.props;
 
 <script>
 	(function() {
+		// Check for touchscreen to avoid leaving the custom cursor on screen.
 		if (!window.matchMedia("(pointer: coarse)").matches) {
 			let cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
-			const DEBUG = false;
+			const DEBUG = false; // Ease-of-access debugging.
 
 			/**
 			 * Update the position of the custom cursor.
@@ -101,7 +104,7 @@ const { title, description } = Astro.props;
 			 * Toggle hover state of the cursor.
 			 * @param isHover 
 			 */
-			const toggleHoverState = (isHover: boolean) => {
+			const toggleCursorHoverState = (isHover: boolean) => {
 				DEBUG && console.log('Setting Hover State: ' + isHover);
 
 				cursor.classList.toggle('hover', isHover);
@@ -113,26 +116,13 @@ const { title, description } = Astro.props;
 			const setHoverables = () => {
 				const hoverables = document.querySelectorAll('a');
 
-				DEBUG && console.log('Setting hoverable events: ' + hoverables);
+				DEBUG && console.log('Detected hoverables: ' + hoverables);
 
 				hoverables.forEach((hoverable) => {
-					hoverable.addEventListener('mouseover', () => toggleHoverState(true));
-					hoverable.addEventListener('mouseleave', () => toggleHoverState(false));
+					hoverable.addEventListener('mouseover', () => toggleCursorHoverState(true));
+					hoverable.addEventListener('mouseleave', () => toggleCursorHoverState(false));
 				});
 			};
-
-			// Event delegation for hover state
-			/* document.addEventListener('mouseover', (e: MouseEvent) => {
-				if (e.target instanceof Element && e.target.matches('a')) {
-					toggleHoverState(true);
-				}
-			});
-
-			document.addEventListener('mouseleave', (e: MouseEvent) => {
-				if (e.target instanceof Element && e.target.matches('a')) {
-					toggleHoverState(false);
-				}
-			}); */
 
 			document.documentElement.addEventListener('mousemove', updatePosition);
 			document.documentElement.addEventListener("mouseenter", updatePosition);
@@ -140,13 +130,14 @@ const { title, description } = Astro.props;
 
 			setHoverables();
 
-			const reinitializeCursor = () => {
-				toggleHoverState(false); // Prevent sticky hover effect on cursor.
+			// When using astro view transitions, listeners needs to be reinitialized.
+			document.addEventListener("astro:page-load", () => {
+				DEBUG && console.log('Reinitializing listeners and hover states.');
+
+				toggleCursorHoverState(false); // Prevent sticky hover effect on cursor.
 				setHoverables(); // Reattach listeners to new elements after page load.
 				cursor = document.querySelector('.cursor') as HTMLElement // Re-set cursor element.
-			};
-
-			document.addEventListener("astro:page-load", reinitializeCursor);
+			});
 		}
 	})();
 </script>
