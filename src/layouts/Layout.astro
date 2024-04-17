@@ -28,7 +28,7 @@ const { title, description } = Astro.props;
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor"></div>
 
-		<main>
+		<main class="p-[5vw] lg:p-[9vw] justify-center">
 			<slot />
 		</main>
 	</body>
@@ -82,15 +82,13 @@ const { title, description } = Astro.props;
 		// Check for touchscreen to avoid leaving the custom cursor on screen.
 		if (!window.matchMedia("(pointer: coarse)").matches) {
 			let cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
-			const DEBUG = false; // Ease-of-access debugging.
+			const DEBUG: boolean = false; // Ease-of-access debugging.
 
-			/**
-			 * Update the position of the custom cursor.
-			 * @param e 
-			 */
+			/** Update X/Y position of the custom cursor. */
 			const updatePosition = (e: MouseEvent) => {
-				const x = e.clientX - 10;
-				const y = e.clientY - 10;
+				// Offset by 10 to center it on the original cursor.
+				const x: number = e.clientX - 10;
+				const y: number = e.clientY - 10;
 				
 				DEBUG && console.log('Updating cursor position');
 				DEBUG && console.log('X: ' + x + ' / ' + 'Y: ' + y);
@@ -100,21 +98,16 @@ const { title, description } = Astro.props;
 				cursor.classList.add('active');
 			}
 
-			/**
-			 * Toggle hover state of the cursor.
-			 * @param isHover 
-			 */
+			/** Toggle hover state of the cursor. */
 			const toggleCursorHoverState = (isHover: boolean) => {
 				DEBUG && console.log('Setting Hover State: ' + isHover);
 
 				cursor.classList.toggle('hover', isHover);
 			};
 
-			/**
-			 * Enable custom hover states on defined hoverables.
-			 */
+			/** Enable custom hover states on defined hoverables. */
 			const setHoverables = () => {
-				const hoverables = document.querySelectorAll('a');
+				const hoverables: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a');
 
 				DEBUG && console.log('Detected hoverables: ' + hoverables);
 
