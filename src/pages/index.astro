@@ -1,16 +1,23 @@
 ---
 import Footer from '@components/Footer.astro';
 import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import clemens from '@assets/projects/project-clemenslaw.dk.png';
+import maldivia from '@assets/projects/project-maldivia.dk.png';
+import activcare from '@assets/projects/project-activcare.dk.png';
+import fiskeriforening from '@assets/projects/project-fiskeriforening.dk.png';
+import fiskeritidende from '@assets/projects/project-fiskeritidende.dk.png';
+import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
 ---
 
 <Layout
-	title="andré winther olsen."
+	title="André Olsen"
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-    <section class="flex flex-col items-center mb-60">
+    <section id="hero" class="flex flex-col items-center mb-[5vw] lg:mb-[9vw]">
         <article class="text-6xl max-w-content font-extralight animate-fade-in-up">
             <h1 class="inline font-semibold">André Olsen</h1> er en full-stack developer @ 
-            <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">adtention</a> 
+            <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a> 
             med 3 år+ erfaring i at forvandle visioner til enestående, online virkelighed. Tag en tur gennem
             <a href="#projects" class="scrolltrigger text-pale-orange hover-underline" aria-label="Link til André Winther Olsens projekter">mine projekter</a>, 
             lær mere <a href="#about" class="scrolltrigger text-pale-orange hover-underline" aria-label="Link til om André Winther Olsen">om mig</a> 
@@ -18,6 +25,40 @@ import Layout from '@layouts/Layout.astro';
         </article>
 
         <Footer />
+    </section>
+
+    <section id="#about" class="max-w-[70%] mx-auto text-lg !leading-snug mb-[5vw] lg:mb-[9vw]">
+        <p class="mb-5">
+            Gennem en helt anden uddannelse, IT Supporter, blev jeg introduceret til den magiske verden som er web udvikling, 
+            som har ført mig til hvor jeg er i dag. Indtil videre har jeg haft glæden af at bygge web løsninger hos et <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital bureau</a>.
+        </p>
+
+        <p class="mb-5">
+            Mit fokus her for tiden ligger i at bygge skræddersyet digitale løsninger hos <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
+            Min personlige preference ligger i det punkt, hvor et smukt design møder et optimeret system - udseende & funktion. 
+            Skulle jeg vælge mellem dem, ville det dog være udseende.
+        </p>
+
+        <p>
+            Når jeg ikke bygger digitale løsninger for kunder bruger jeg som regelt tid med min kæreste & hund, læser bøger, 
+            spiller det nyeste spil som har fanget min opmærksomhed eller arbejder på mine egne digitale projekter.
+        </p>
+    </section>
+
+    <section id="#projects">
+        <article>
+            <Image src={clemens} alt="Clemens Advokatfirma" class="w-1/5" />
+
+            <div>
+                <p>
+                    
+                </p>
+
+                <div>
+
+                </div>
+            </div>
+        </article>
     </section>
 </Layout>
 

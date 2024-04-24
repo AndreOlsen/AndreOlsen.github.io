@@ -1,6 +1,4 @@
 --- 
-import Footer from '@components/Footer.astro';
-import { ViewTransitions } from 'astro:transitions';
 import '@styles/global.scss';
 
 interface Props {
@@ -23,7 +21,6 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
-		<ViewTransitions />
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor"></div>
