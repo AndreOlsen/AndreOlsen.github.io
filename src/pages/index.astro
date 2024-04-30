@@ -1,5 +1,5 @@
 ---
-import Footer from '@components/Footer.astro';
+import Socials from '@components/Socials.astro';
 import Layout from '@layouts/Layout.astro';
 import Skill from '@components/Skill.astro';
 import { Image } from 'astro:assets';
@@ -14,7 +14,7 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
 	title="André Olsen"
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-    <section id="hero" class="flex flex-col items-center mb-[9vw]">
+    <section id="hero" class="flex flex-col items-center mb-[13vw]">
         <article class="text-6xl max-w-content font-extralight animate-fade-in-up">
             <h1 class="inline font-semibold">André Olsen</h1> er en full-stack developer @ 
             <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a> 
@@ -24,16 +24,16 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
             eller få indblik i <a href="#resume" class="scrolltrigger text-pale-orange hover-underline" aria-label="Link til André Winther Olsens karriere">min rejse</a>.
         </article>
 
-        <Footer />
+        <Socials />
     </section>
 
-    <section id="#about" class="lg:max-w-[70%] mx-auto text-base !leading-snug mb-[9vw]">
-        <p class="mb-5">
+    <section id="#about" class="lg:max-w-[70%] mx-auto text-base !leading-snug mb-[13vw]">
+        <p class="mb-3">
             Gennem en helt anden uddannelse, IT Supporter, blev jeg introduceret til den magiske verden som er web udvikling, 
             hvilket har ført mig til hvor jeg er i dag. Indtil videre har jeg haft glæden af at bygge web løsninger hos et <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital bureau</a>.
         </p>
 
-        <p class="mb-5">
+        <p class="mb-3">
             Mit fokus her for tiden ligger i at bygge skræddersyet digitale løsninger hos <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
             Min personlige preference ligger i det punkt, hvor et smukt design møder et optimeret system - udseende & funktion. 
             Skulle jeg vælge mellem dem, ville det dog være udseende.
@@ -118,7 +118,3 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
         }
     }
 </style>
-
-<script>
-    
-</script>
