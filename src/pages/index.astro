@@ -16,18 +16,20 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
 >
     <section id="hero" class="flex flex-col items-center mb-[13vw]">
         <article class="text-6xl max-w-content font-extralight animate-fade-in-up">
+    <section id="hero" class="flex flex-col items-center mb-[13vw] mx-auto lg:max-w-content">
+        <article class="text-4xl font-extralight animate-fade-in-up">
             <h1 class="inline font-semibold">André Olsen</h1> er en full-stack developer @ 
             <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a> 
             med 3 år+ erfaring i at forvandle visioner til enestående, online virkelighed. Tag en tur gennem
-            <a href="#projects" class="scrolltrigger text-pale-orange hover-underline" aria-label="Link til André Winther Olsens projekter">mine projekter</a>, 
-            lær mere <a href="#about" class="scrolltrigger text-pale-orange hover-underline" aria-label="Link til om André Winther Olsen">om mig</a> 
-            eller få indblik i <a href="#resume" class="scrolltrigger text-pale-orange hover-underline" aria-label="Link til André Winther Olsens karriere">min rejse</a>.
+            <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link til André Winther Olsens projekter">mine projekter</a>, 
+            lær mere <a href="#about" class="text-pale-orange hover-underline" aria-label="Link til om André Winther Olsen">om mig</a> 
+            eller få indblik i <a href="#resume" class="text-pale-orange hover-underline" aria-label="Link til André Winther Olsens karriere">min rejse</a>.
         </article>
 
         <Socials />
     </section>
 
-    <section id="#about" class="lg:max-w-[70%] mx-auto text-base !leading-snug mb-[13vw]">
+    <section id="#about" class="lg:max-w-reading mx-auto text-base !leading-snug mb-[13vw]">
         <p class="mb-3">
             Gennem en helt anden uddannelse, IT Supporter, blev jeg introduceret til den magiske verden som er web udvikling, 
             hvilket har ført mig til hvor jeg er i dag. Indtil videre har jeg haft glæden af at bygge web løsninger hos et <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital bureau</a>.
@@ -45,8 +47,8 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
         </p>
     </section>
 
-    <section id="#projects">
-        <a href="https://clemenslaw.dk" target="_blank" class="lg:max-w-[70%] mx-auto flex flex-col lg:flex-row gap-10 mb-20">
+    <section id="#projects" class="lg:max-w-reading mx-auto">
+        <a href="https://clemenslaw.dk" target="_blank" class="flex flex-col lg:flex-row gap-10 mb-20">
             <Image src={andreolsen} alt="André Olsen" class="lg:w-1/3 rounded" />
 
             <div>
@@ -66,7 +68,7 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
             </div>
         </a>
 
-        <a href="https://clemenslaw.dk" target="_blank" class="lg:max-w-[70%] mx-auto flex flex-col lg:flex-row gap-3 lg:gap-10 mb-20">
+        <a href="https://clemenslaw.dk" target="_blank" class="flex flex-col lg:flex-row gap-3 lg:gap-10 mb-20">
             <Image src={clemens} alt="Clemens Advokatfirma" class="lg:w-1/3 rounded" />
 
             <div>
@@ -86,7 +88,7 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
             </div>
         </a>
 
-        <a href="https://fiskeritidende.dk" target="_blank" class="lg:max-w-[70%] mx-auto flex flex-col lg:flex-row gap-10">
+        <a href="https://fiskeritidende.dk" target="_blank" class="flex flex-col lg:flex-row gap-10">
             <Image src={fiskeritidende} alt="Fiskeri Tidende" class="lg:w-1/3 rounded" />
 
             <div>
