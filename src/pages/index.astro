@@ -3,12 +3,13 @@ import Socials from '@components/Socials.astro';
 import Layout from '@layouts/Layout.astro';
 import Skill from '@components/Skill.astro';
 import { Image } from 'astro:assets';
-import clemens from '@assets/projects/project-clemenslaw.dk.png';
+import clemenslaw from '@assets/projects/project-clemenslaw.dk.png';
 import maldivia from '@assets/projects/project-maldivia.dk.png';
 import activcare from '@assets/projects/project-activcare.dk.png';
 import fiskeriforening from '@assets/projects/project-fiskeriforening.dk.png';
 import fiskeritidende from '@assets/projects/project-fiskeritidende.dk.png';
 import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
+import Project from '@components/Project.astro';
 ---
 <Layout
 	title="André Olsen"
@@ -27,7 +28,7 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
         <Socials />
     </section>
 
-    <section id="#about" class="lg:max-w-reading mx-auto text-base !leading-snug mb-[13vw]">
+    <section id="about" class="lg:max-w-reading mx-auto text-base !leading-snug mb-[13vw]">
         <p class="mb-3">
             Gennem en helt anden uddannelse, IT Supporter, blev jeg introduceret til den magiske verden som er web udvikling, 
             hvilket har ført mig til hvor jeg er i dag. Indtil videre har jeg haft glæden af at bygge web løsninger hos et <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital bureau</a>.
@@ -41,80 +42,36 @@ import andreolsen from '@assets/projects/project-andreolsen.github.io.png';
 
         <p>
             Når jeg ikke bygger digitale løsninger for kunder bruger jeg som regelt tid med min kæreste & hund, læser bøger, 
-            spiller det nyeste spil som har fanget min opmærksomhed eller arbejder på mine egne digitale projekter.
+            spiller det nyeste spil som har fanget min opmærksomhed eller arbejder på mine egne projekter.
         </p>
     </section>
 
-    <section id="#projects" class="lg:max-w-reading mx-auto">
-        <a href="https://clemenslaw.dk" target="_blank" class="flex flex-col lg:flex-row gap-10 mb-20">
-            <Image src={andreolsen} alt="André Olsen" class="lg:w-1/3 rounded" />
+    <section id="projects" class="lg:max-w-reading mx-auto flex flex-col gap-10">
+        <Project 
+            name="andreolsen.github.io"
+            description="Min personlige hjemmeside, bygget da jeg vil lære Tailwind & TypeScript"
+            url="https://andreolsen.github.io"
+            imgSrc={andreolsen}
+            imgAlt="Billede af André Olsens personlige hjemmeside"
+            skills={['AstroJS', 'Tailwind', 'TypeScript']}
+        />
 
-            <div>
-                <h2 class="text-lg">
-                    andreolsen.github.io
-                </h2>
+        <Project 
+            name="Clemens Advokatfirma"
+            description="Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome."
+            url="https://clemenslaw.dk"
+            imgSrc={clemenslaw}
+            imgAlt="Billede af Clemens Advokatfirmas hjemmeside"
+            skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
+        />
 
-                <p class="text-base !leading-snug mb-3">
-                    Min egen personlige hjemmeside som er bygget med AstroJS, Tailwind
-                </p>
-
-                <div class="flex gap-3">
-                    <Skill name="AstroJS" />
-                    <Skill name="Tailwind" />
-                    <Skill name="SCSS" />
-                </div>
-            </div>
-        </a>
-
-        <a href="https://clemenslaw.dk" target="_blank" class="flex flex-col lg:flex-row gap-3 lg:gap-10 mb-20">
-            <Image src={clemens} alt="Clemens Advokatfirma" class="lg:w-1/3 rounded" />
-
-            <div>
-                <h2 class="text-lg">
-                    Clemens Advokatfirma
-                </h2>
-
-                <p class="text-base !leading-snug mb-3">
-                    Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome.
-                </p>
-
-                <div class="flex gap-3">
-                    <Skill name="WordPress" />
-                    <Skill name="SCSS" />
-                    <Skill name="GIT" />
-                </div>
-            </div>
-        </a>
-
-        <a href="https://fiskeritidende.dk" target="_blank" class="flex flex-col lg:flex-row gap-10">
-            <Image src={fiskeritidende} alt="Fiskeri Tidende" class="lg:w-1/3 rounded" />
-
-            <div>
-                <h2 class="text-lg">
-                    Fiskeri Tidende
-                </h2>
-
-                <p class="text-base !leading-snug mb-3">
-                    Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome.
-                </p>
-
-                <div class="flex gap-3">
-                    <Skill name="WordPress" />
-                    <Skill name="SCSS" />
-                    <Skill name="GIT" />
-                </div>
-            </div>
-        </a>
+        <Project 
+            name="Fiskeri Tidende"
+            description="Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome."
+            url="https://fiskeritidende.dk"
+            imgSrc={fiskeritidende}
+            imgAlt="Billede af Fiskeri Tidendes hjemmeside"
+            skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
+        />
     </section>
 </Layout>
-
-<style lang="scss">
-    a {
-        transition: all .2s var(--bouncy-cubic);
-
-        &:hover,
-        &:focus {
-            transform: translateY(-2px);
-        }
-    }
-</style>

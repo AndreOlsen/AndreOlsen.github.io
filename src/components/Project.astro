@@ -1,0 +1,45 @@
+---
+import Skill from '@components/Skill.astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+	name: string;
+    description: string;
+    url: string;
+    imgSrc: ImageMetadata;
+    imgAlt: string;
+    skills: Array<string>
+}
+
+const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
+---
+<a href={url} target="_blank" class="flex flex-col lg:flex-row gap-10">
+    <Image src={imgSrc} alt={imgAlt} class="lg:w-1/3 rounded" />
+
+    <article>
+        <h2 class="text-lg">
+            {name}
+        </h2>
+
+        <p class="text-base !leading-snug mb-3">
+            {description}
+        </p>
+
+        <div class="flex gap-3">
+            {skills.map((name) => (
+                <Skill name={name} />
+            ))}
+        </div>
+    </article>
+</a>
+
+<style lang="scss">
+    a {
+        transition: all .2s var(--bouncy-cubic);
+
+        &:hover,
+        &:focus {
+            transform: translateY(-2px);
+        }
+    }
+</style>
