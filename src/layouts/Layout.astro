@@ -1,6 +1,7 @@
 --- 
 import '@styles/global.scss';
 import Footer from '@components/Footer.astro';
+import Socials from '@components/Socials.astro';
 
 interface Props {
 	title: string;
@@ -25,7 +26,7 @@ const { title, description } = Astro.props;
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor"></div>
 
-		<main class="p-[5vw] lg:p-[9vw]">
+		<main>
 			<slot />
 		</main>
 

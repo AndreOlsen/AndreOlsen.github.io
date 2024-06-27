@@ -4,23 +4,26 @@ import Layout from '@layouts/Layout.astro';
 import clemenslaw from '@assets/projects/clemenslaw.dk.png';
 import fiskeritidende from '@assets/projects/fiskeritidende.dk.png';
 import andreolsen from '@assets/projects/andreolsen.github.io.png';
+import fiskeriforening from '@assets/projects/fiskeriforening.dk.png';
 import Project from '@components/Project.astro';
 ---
 <Layout
 	title="André Olsen"
 	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
 >
-    <section id="hero" class="flex flex-col items-center mb-[13vw] mx-auto lg:max-w-content">
-        <article class="text-4xl font-extralight animate-fade-in-up">
-            <h1 class="inline font-semibold">André Olsen</h1> er en full-stack developer @ 
-            <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a> 
-            med 3 år+ erfaring i at forvandle visioner til enestående, online virkelighed. Tag en tur gennem
-            <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link til André Winther Olsens projekter">mine projekter</a>, 
-            lær mere <a href="#about" class="text-pale-orange hover-underline" aria-label="Link til om André Winther Olsen">om mig</a> 
-            eller få indblik i <a href="#resume" class="text-pale-orange hover-underline" aria-label="Link til André Winther Olsens karriere">min rejse</a>.
-        </article>
-
-        <Socials />
+    <section id="hero" class="h-screen w-screen grid place-items-center">
+        <div class="flex flex-col items-center mx-auto lg:max-w-content">
+            <article class="text-4xl font-extralight animate-fade-in-up">
+                <h1 class="inline font-semibold">André Olsen</h1> er en full-stack developer @ 
+                <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a> 
+                med 3+ års erfaring i at forvandle visioner til enestående, online virkelighed. Tag en tur gennem
+                <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link til André Winther Olsens projekter">mine projekter</a>, 
+                lær mere <a href="#about" class="text-pale-orange hover-underline" aria-label="Link til om André Winther Olsen">om mig</a> 
+                eller få indblik i <a href="#resume" class="text-pale-orange hover-underline" aria-label="Link til André Winther Olsens karriere">min rejse</a>.
+            </article>
+    
+            <Socials />
+        </div>
     </section>
 
     <section id="about" class="lg:max-w-reading mx-auto text-base !leading-snug mb-[13vw]">
@@ -41,14 +44,14 @@ import Project from '@components/Project.astro';
         </p>
     </section>
 
-    <section id="projects" class="lg:max-w-reading mx-auto flex flex-col gap-10">
+    <section id="projects" class="lg:max-w-reading mx-auto flex flex-col gap-14">
         <Project 
             name="andreolsen.github.io"
             description="Min personlige hjemmeside, bygget da jeg vil lære Tailwind & TypeScript"
             url="https://andreolsen.github.io"
             imgSrc={andreolsen}
             imgAlt="Billede af André Olsens personlige hjemmeside"
-            skills={['AstroJS', 'Tailwind', 'TypeScript']}
+            skills={['AstroJS', 'Tailwind', 'TypeScript', 'PNPM']}
         />
 
         <Project 
@@ -57,6 +60,15 @@ import Project from '@components/Project.astro';
             url="https://clemenslaw.dk"
             imgSrc={clemenslaw}
             imgAlt="Billede af Clemens Advokatfirmas hjemmeside"
+            skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
+        />
+
+        <Project 
+            name="Fiskeriforening"
+            description="Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome."
+            url="https://fiskeriforening.dk"
+            imgSrc={fiskeriforening}
+            imgAlt="Billede af Fiskeriforenings hjemmeside"
             skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
         />
 
