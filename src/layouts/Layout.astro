@@ -1,7 +1,7 @@
 --- 
 import '@styles/global.scss';
 import Footer from '@components/Footer.astro';
-import Socials from '@components/Socials.astro';
+import Header from '@components/Header.astro';
 
 interface Props {
 	title: string;
@@ -11,7 +11,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 <!DOCTYPE html> 
-<html lang="da">
+<html lang="da" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,9 +26,7 @@ const { title, description } = Astro.props;
 	<body class="bg-grey-blue text-cyan-green">
 		<div class="cursor"></div>
 
-		<main>
-			<slot />
-		</main>
+		<slot />
 
 		<Footer />
 	</body>
@@ -37,6 +35,8 @@ const { title, description } = Astro.props;
 <style is:global lang="scss">
 	:root {
 		--bouncy-cubic: cubic-bezier(.48, -.38, .41, 1.22);
+		--cursor-color: #66FCF1;
+		--cursor-hover-color: #FFCB9A;
 	}
 
 	* {
@@ -44,18 +44,10 @@ const { title, description } = Astro.props;
 		cursor: none !important;
 	}
 
-	html {
-		scroll-behavior: smooth;
-	}
-
-	main {
-		@apply mx-[5vw];
-	}
-
 	.cursor {
 		--cursor-y: 0;
 		--cursor-x: 0;
-		background-color: #66FCF1;
+		background-color: var(--cursor-color);
 		opacity: 0;
 		width: 20px;
 		height: 20px;
@@ -71,7 +63,7 @@ const { title, description } = Astro.props;
 
 		&.hover {
 			transform: scale(3);
-			background-color: #FFCB9A;
+			background-color: var(--cursor-hover-color);
 			mix-blend-mode: difference;
 		}
 

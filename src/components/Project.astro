@@ -15,7 +15,7 @@ interface Props {
 const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
 ---
 <a href={url} target="_blank" class="flex flex-col md:flex-row gap-5 lg:gap-10">
-    <Image src={imgSrc} alt={imgAlt} class="md:w-1/3 lg:w-1/4 md:h-full rounded mt-2" />
+    <Image src={imgSrc} alt={imgAlt} class="md:w-44 md:h-full rounded mt-2" />
 
     <article>
         <header class="flex items-center gap-1">
