@@ -75,7 +75,7 @@ const { title, description } = Astro.props;
 <script>
 	(function() {
 		// Check for touchscreen to avoid leaving the custom cursor on screen.
-		if (!window.matchMedia("(pointer: coarse)").matches) {
+		if (! window.matchMedia("(pointer: coarse)").matches) {
 			let cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
 			const DEBUG: boolean = false; // Ease-of-access debugging.
 
