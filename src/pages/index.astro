@@ -14,7 +14,7 @@ import Header from '@components/Header.astro';
     <Header />
 
     <main class="md:max-w-reading md:mx-auto mx-[5vw]">
-        <section id="about" class="text-base leading-normal! mb-20 text-justify">
+        <section id="about" class="text-xl leading-normal! mb-20 text-justify">
             <p class="mb-3">
                 Gennem en helt anden uddannelse, IT Supporter, blev jeg introduceret til den magiske verden som er web udvikling, 
                 hvilket har ført mig til hvor jeg er i dag. Indtil videre har jeg haft glæden af at bygge web løsninger hos et <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital bureau</a>.
@@ -35,11 +35,11 @@ import Header from '@components/Header.astro';
         <section id="projects" class="flex flex-col gap-10">
             <Project 
                 name="andreolsen.github.io"
-                description="Min personlige hjemmeside, bygget for at lære nye teknologier."
+                description="Min personlige hjemmeside som portfolio, bygget med Astro & Tailwind CSS."
                 url="https://andreolsen.github.io"
                 imgSrc={andreolsen}
                 imgAlt="Billede af André Olsens personlige hjemmeside"
-                skills={['AstroJS', 'Tailwind', 'TypeScript', 'PNPM']}
+                skills={['Astro', 'Tailwind', 'TypeScript', 'PNPM', 'Vite']}
             />
 
             <Project 
@@ -48,25 +48,25 @@ import Header from '@components/Header.astro';
                 url="https://clemenslaw.dk"
                 imgSrc={clemenslaw}
                 imgAlt="Billede af Clemens Advokatfirmas hjemmeside"
-                skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
+                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
             />
 
             <Project 
                 name="Fiskeriforening"
-                description="Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome."
+                description="Hjemmeside med integreret nyhedsfeed fra Fiskeri Tidende, medlemsportal og interaktivt kort."
                 url="https://fiskeriforening.dk"
                 imgSrc={fiskeriforening}
                 imgAlt="Billede af Fiskeriforenings hjemmeside"
-                skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
+                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
             />
 
             <Project 
                 name="Fiskeri Tidende"
-                description="Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome."
+                description="Migrering fra Umbraco til WordPress. Implementerede import af komplet nyhedskatalog og struktur med kategorier & tags."
                 url="https://fiskeritidende.dk"
                 imgSrc={fiskeritidende}
                 imgAlt="Billede af Fiskeri Tidendes hjemmeside"
-                skills={['WordPress', 'SCSS', 'Webpack', 'GIT']}
+                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
             />
         </section>
     </main>
