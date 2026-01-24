@@ -15,8 +15,8 @@ interface Props {
 
 const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
 ---
-<a href={url} target="_blank" class="flex flex-col md:flex-row gap-5 lg:gap-10">
-    <Image src={imgSrc} alt={imgAlt} class="md:w-44 md:h-full rounded mt-2" />
+<a href={url} target="_blank" class="flex flex-col md:flex-row gap-5 lg:gap-8 project-card" rel="noopener">
+    <Image src={imgSrc} alt={imgAlt} class="md:w-44 h-full rounded mt-2" />
 
     <article>
         <header class="flex items-center gap-1">
@@ -42,6 +42,13 @@ const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
 <style lang="scss">
     a {
         transition: all .2s var(--bouncy-cubic);
+        opacity: 0;
+        transform: translateY(20px);
+
+        &.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         &:hover,
         &:focus {
@@ -49,3 +56,22 @@ const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
         }
     }
 </style>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        observer.observe(card);
+    });
+</script>

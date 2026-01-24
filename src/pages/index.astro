@@ -4,6 +4,8 @@ import clemenslaw from '@assets/projects/clemenslaw.dk.png';
 import fiskeritidende from '@assets/projects/fiskeritidende.dk.png';
 import andreolsen from '@assets/projects/andreolsen.github.io.png';
 import fiskeriforening from '@assets/projects/fiskeriforening.dk.png';
+import villavilla from '@assets/projects/villavilla.dk.png';
+import solgtcom from '@assets/projects/solgt.com.png';
 import Project from '@components/Project.astro';
 import Header from '@components/Header.astro';
 ---
@@ -14,58 +16,78 @@ import Header from '@components/Header.astro';
     <Header />
 
     <main class="md:max-w-reading md:mx-auto mx-[5vw]">
-        <section id="about" class="text-xl leading-normal! mb-20 text-justify">
+        <section id="about" class="text-xl leading-normal! mb-40 text-justify">
             <p class="mb-3">
-                Gennem en helt anden uddannelse, IT Supporter, blev jeg introduceret til den magiske verden som er web udvikling, 
-                hvilket har ført mig til hvor jeg er i dag. Indtil videre har jeg haft glæden af at bygge web løsninger hos et <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital bureau</a>.
+                Through a completely different educational background in IT Support, I was introduced to the magical world of web development, 
+                which has led me to where I am today. I've had the pleasure of building web solutions at a <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital agency</a>.
             </p>
 
             <p class="mb-3">
-                Mit fokus her for tiden ligger i at bygge skræddersyet digitale løsninger hos <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
-                Min personlige preference ligger i det punkt, hvor et smukt design møder et optimeret system - udseende & funktion. 
-                Skulle jeg vælge mellem dem, ville det dog være udseende.
+                My current focus is on building tailored digital solutions at <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
+                My personal preference lies at the intersection of beautiful design and optimized systems—aesthetics and function working together. 
+                If I had to choose between them, it would be aesthetics.
             </p>
 
             <p>
-                Når jeg ikke bygger digitale løsninger for kunder bruger jeg som regelt tid med min kæreste & hund, læser bøger, 
-                spiller det nyeste spil som har fanget min opmærksomhed eller arbejder på mine egne projekter.
+                When I'm not building digital solutions for clients, I spend time with my partner and dog, reading books, 
+                playing the latest games that catch my attention, or working on personal projects.
             </p>
         </section>
 
+        <h2 class="text-3xl text-pale-orange mb-10">My Projects</h2>
+
         <section id="projects" class="flex flex-col gap-10">
             <Project 
+                name="VillaVilla"
+                description="Senior full stack developer for a Danish luxury summer vacation home rental service website, featuring custom booking systems and dynamic property showcases."
+                url="https://villavilla.dk"
+                imgSrc={villavilla}
+                imgAlt="VillaVilla luxury vacation rental website homepage"
+                skills={['Laravel', 'Vue.js', 'WordPress', 'REST API', 'Git']}
+            />
+
+            <Project 
                 name="andreolsen.github.io"
-                description="Min personlige hjemmeside som portfolio, bygget med Astro & Tailwind CSS."
+                description="In pursuit of learning technologies and honing my skills, I've developed my personal portfolio website."
                 url="https://andreolsen.github.io"
                 imgSrc={andreolsen}
-                imgAlt="Billede af André Olsens personlige hjemmeside"
-                skills={['Astro', 'Tailwind', 'TypeScript', 'PNPM', 'Vite']}
+                imgAlt="André Olsen's portfolio website"
+                skills={['Astro', 'Tailwind', 'TypeScript', 'Bun', 'Vite']}
             />
 
             <Project 
-                name="Clemens Advokatfirma"
-                description="Hjemmeside bygget i WordPress og gjort brugervenlig via temaet Flatsome."
+                name="Solgt.com - Brugte Biler"
+                description="Development of a used car marketplace website with advanced search and filtering capabilities, and seamless integration with third-party vehicle data providers."
+                url="https://solgt.com/brugte-biler"
+                imgSrc={solgtcom}
+                imgAlt="Solgt.com used cars website"
+                skills={['WordPress', 'WooCommerce', 'JavaScript', 'REST API']}
+            />
+
+            <Project 
+                name="CLEMENS Advokatpartnerselskab"
+                description="A Danish WordPress website with multilingual support, built to reimagine the Danish CLEMENS Law Firms online presence."
                 url="https://clemenslaw.dk"
                 imgSrc={clemenslaw}
-                imgAlt="Billede af Clemens Advokatfirmas hjemmeside"
-                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
+                imgAlt="Clemens Law Firm website"
+                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP', 'Weglot']}
             />
 
             <Project 
-                name="Fiskeriforening"
-                description="Hjemmeside med integreret nyhedsfeed fra Fiskeri Tidende, medlemsportal og interaktivt kort."
+                name="Danmarks Fiskeriforening"
+                description="Danish fishing association website featuring an integrated news feed from Fiskeri Tidende, a pseudo-member portal, and interactive maps for association locations and fishing information."
                 url="https://fiskeriforening.dk"
                 imgSrc={fiskeriforening}
-                imgAlt="Billede af Fiskeriforenings hjemmeside"
+                imgAlt="Fiskeriforening fishing association website with member portal"
                 skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
             />
 
             <Project 
                 name="Fiskeri Tidende"
-                description="Migrering fra Umbraco til WordPress. Implementerede import af komplet nyhedskatalog og struktur med kategorier & tags."
+                description="Led the migration from Umbraco to WordPress, implementing a complete import of the news catalog with structured categories and tags for improved organization and discoverability."
                 url="https://fiskeritidende.dk"
                 imgSrc={fiskeritidende}
-                imgAlt="Billede af Fiskeri Tidendes hjemmeside"
+                imgAlt="Fiskeri Tidende fishing news website"
                 skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
             />
         </section>
