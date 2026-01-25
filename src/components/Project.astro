@@ -17,7 +17,7 @@ const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
 ---
 <a href={url} target="_blank" rel="noopener" class="project-card-link">
     <article class="flex flex-col md:flex-row gap-5 lg:gap-8 project-card">
-        <figure class="md:w-44 flex-shrink-0">
+        <figure class="md:w-44 shrink-0">
             <Image src={imgSrc} alt={imgAlt} class="md:h-full rounded mt-2 object-cover" />
         </figure>
 
