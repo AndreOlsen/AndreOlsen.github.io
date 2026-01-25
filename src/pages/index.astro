@@ -53,7 +53,7 @@ import Hero from '@components/Hero.astro';
         </div>
     </header>
 
-    <main class="md:max-w-reading md:mx-auto mx-[5vw]">
+    <main class="md:max-w-reading md:mx-auto mx-[5vw]" id="main">
         <section id="about" class="mb-40">
             <h2 class="text-3xl text-pale-orange my-10">
                 about me
@@ -71,12 +71,12 @@ import Hero from '@components/Hero.astro';
             </p>
         </section>
 
-        <section class="mb-40">
+        <section class="mb-40" id="skills">
             <h2 class="text-3xl text-pale-orange my-10">
                 skills & technologies
             </h2>
 
-            <div class="flex flex-wrap gap-3 mb-6">
+            <ul class="flex flex-wrap gap-3 mb-6 list-none p-0">
                 <Skill name="HTML5" />
                 <Skill name="CSS3" />
                 <Skill name="SCSS" />
@@ -98,10 +98,10 @@ import Hero from '@components/Hero.astro';
                 <Skill name="Redis" />
                 <Skill name="Webpack" />
                 <Skill name="jQuery" />
-                <span class="py-1 text-xs italic">
-                    Still loading...
-                </span>
-            </div>
+                <li class="py-1 text-xs italic">
+                    still loading...
+                </li>
+            </ul>
 
             <p class="mb-4 text-base text-justify">
                 Over the years, I've honed a diverse skill set that spans both front-end and back-end development. On the front end, I'm proficient in HTML5, CSS3 (with a strong emphasis on responsive design using Tailwind CSS), and JavaScript/TypeScript. I have experience with modern frameworks like Vue.js and Astro, enabling me to build dynamic and engaging user interfaces.

@@ -15,32 +15,48 @@ interface Props {
 
 const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
 ---
-<a href={url} target="_blank" class="flex flex-col md:flex-row gap-5 lg:gap-8 project-card" rel="noopener">
-    <Image src={imgSrc} alt={imgAlt} class="md:w-44 h-full rounded mt-2" />
+<a href={url} target="_blank" rel="noopener" class="project-card-link">
+    <article class="flex flex-col md:flex-row gap-5 lg:gap-8 project-card">
+        <figure class="md:w-44 flex-shrink-0">
+            <Image src={imgSrc} alt={imgAlt} class="md:h-full rounded mt-2 object-cover" />
+        </figure>
 
-    <article>
-        <header class="flex items-center gap-1">
-            <h3 class="text-lg">
-                {name}
-            </h3>
-            
-            <Icon name="mdi:arrow-up-thin" class="h-6 rotate-45" />
-        </header>
+        <div>
+            <header class="flex items-center gap-1">
+                <h3 class="text-lg">
+                    {name}
+                </h3>
+                
+                <Icon name="mdi:arrow-up-thin" class="h-6 rotate-45" />
+            </header>
 
-        <p class="text-base leading-snug! mb-3">
-            {description}
-        </p>
+            <p class="text-base leading-snug! mb-3">
+                {description}
+            </p>
 
-        <div class="flex flex-wrap gap-2">
-            {skills.map((name) => (
-                <Skill name={name} />
-            ))}
+            <ul class="flex flex-wrap gap-2 list-none p-0">
+                {skills.map((name) => (
+                    <Skill name={name} />
+                ))}
+            </ul>
         </div>
     </article>
 </a>
 
 <style lang="scss">
-    a {
+    a.project-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+
+        &:focus-visible {
+            outline: 2px solid var(--cursor-color);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+    }
+
+    .project-card {
         transition: all .2s var(--bouncy-cubic);
         opacity: 0;
         transform: translateY(20px);
@@ -50,8 +66,8 @@ const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
             transform: translateY(0);
         }
 
-        &:hover,
-        &:focus {
+        a.project-card-link:hover &,
+        a.project-card-link:focus &{
             transform: translateY(-2px);
         }
     }

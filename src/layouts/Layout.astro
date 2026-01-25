@@ -10,7 +10,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 <!DOCTYPE html> 
-<html lang="da" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,9 +20,49 @@ const { title, description } = Astro.props;
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<meta name="color-scheme" content="dark" />
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://andreolsen.github.io" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="André Winther Olsen" />
+		
+		<!-- Twitter Card -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://andreolsen.github.io" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://andreolsen.github.io" />
+		
+		<!-- JSON-LD Schema -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "André Winther Olsen",
+			"url": "https://andreolsen.github.io",
+			"jobTitle": "Full Stack Developer",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Adtention",
+				"url": "https://adtention.dk"
+			},
+			"sameAs": [
+				"https://github.com/AndreOlsen",
+				"https://linkedin.com/in/andre-w-olsen",
+				"https://codepen.io/Andr-Olsen"
+			]
+		})} />
+		
 		<title>{title}</title>
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
+		<!-- Skip to content link for keyboard users -->
+		<a href="#main" class="skip-link">skip to main content</a>
+		
 		<div class="cursor"></div>
 
 		<slot />
@@ -43,6 +83,43 @@ const { title, description } = Astro.props;
 		cursor: none !important;
 	}
 
+	/* Visible focus indicators for keyboard navigation */
+	a:focus-visible,
+	button:focus-visible,
+	input:focus-visible,
+	textarea:focus-visible,
+	select:focus-visible {
+		outline: 2px solid var(--cursor-color);
+		outline-offset: 2px;
+	}
+
+	/* Skip link - only visible on focus */
+	.skip-link {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		background: var(--cursor-color);
+		color: #17252A;
+		padding: 8px;
+		z-index: 100;
+	}
+
+	.skip-link:focus {
+		top: 0;
+	}
+
+	/* Respect prefers-reduced-motion */
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+
+	/* Custom cursor styles */
 	.cursor {
 		--cursor-y: 0;
 		--cursor-x: 0;
@@ -109,6 +186,9 @@ const { title, description } = Astro.props;
 				hoverables.forEach((hoverable) => {
 					hoverable.addEventListener('mouseover', () => toggleCursorHoverState(true));
 					hoverable.addEventListener('mouseleave', () => toggleCursorHoverState(false));
+					// Ensure custom cursor doesn't hide focus for keyboard users
+					hoverable.addEventListener('focus', () => toggleCursorHoverState(true));
+					hoverable.addEventListener('blur', () => toggleCursorHoverState(false));
 				});
 			};
 
