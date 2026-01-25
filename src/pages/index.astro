@@ -7,89 +7,173 @@ import fiskeriforening from '@assets/projects/fiskeriforening.dk.png';
 import villavilla from '@assets/projects/villavilla.dk.png';
 import solgtcom from '@assets/projects/solgt.com.png';
 import Project from '@components/Project.astro';
-import Header from '@components/Header.astro';
+import Socials from '@components/Socials.astro';
+import Skill from '@components/Skill.astro';
+import Hero from '@components/Hero.astro';
 ---
 <Layout
-	title="André Olsen"
-	description="André Olsen er en full stack udvikler med en passion for udvikling af enestående og brugervenlige løsninger til nettet."
+	title="André Winther Olsen - Full Stack Artisan"
+	description="Portfolio of André Winther Olsen, a dedicated full-stack developer specializing in crafting seamless web experiences with a focus on both front-end and back-end technologies."
 >
-    <Header />
+    <header class="h-screen w-full grid place-items-center">
+        <div class="flex flex-col items-center lg:mx-auto mx-[5vw] lg:max-w-6xl">
+            <!-- <article class="text-6xl font-extralight animate-fade-in-up text-justify">
+                <h1 class="inline font-semibold">André Winther Olsen</h1> is a full-stack developer @ 
+                <a href="https://adtention.dk" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's workplace" target="_blank">Adtention</a> 
+                with 3+ years of experience transforming visions into exceptional online experiences.
+                Learn more <a href="#about" class="text-pale-orange hover-underline" aria-label="Link to about André Olsen">about me</a> or check out
+                <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's projects">my work</a>.
+            </article> -->
+
+            <article class="text-center flex flex-col h-full justify-center">
+                <h1>
+                    <span class="text-lg block opacity-0 animate-[fadeInUp_500ms_cubic-bezier(0.34,1.56,0.64,1)_1_150ms_both]">
+                        hello! <span class="wave animate-wave inline-block">👋</span> my name is
+                    </span>
+                    <span class="text-4xl md:text-8xl opacity-0 text-gradient block font-bold animate-[fadeInUp_600ms_cubic-bezier(0.34,1.56,0.64,1)_1_350ms_both] mt-4">
+                        André Winther Olsen.
+                    </span>
+                </h1>
+                
+                <p class="opacity-0 text-base animate-[fadeInUp_500ms_cubic-bezier(0.34,1.56,0.64,1)_1_500ms_both] mt-6 max-w-xl mx-auto text-cyan-green/70 italic">
+                    crafting beautiful digital experiences at the intersection of design and engineering
+                </p>
+                
+                <p class="opacity-0 text-lg animate-[fadeInUp_500ms_cubic-bezier(0.34,1.56,0.64,1)_1_650ms_both] mt-12 max-w-3xl mx-auto leading-relaxed text-cyan-green/90">
+                    i'm a full-stack developer @ <a href="https://adtention.dk" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's workplace" target="_blank">adtention</a> 
+                    with 3+ years of experience transforming visions into exceptional online experiences. i specialize in building thoughtful solutions that balance pixel-perfect interfaces with robust architecture—where great aesthetics catch the eye, but great systems keep people coming back.
+                    <br /><br />
+                    learn more <a href="#about" class="text-pale-orange hover-underline" aria-label="Link to about André Olsen">about me</a>, explore
+                    <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's projects">my work</a>, or check out my
+                    <a href="#skills" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's skills">skills & technologies</a>.
+                </p>
+            </article>
+
+            <Socials />
+        </div>
+    </header>
 
     <main class="md:max-w-reading md:mx-auto mx-[5vw]">
-        <section id="about" class="text-xl leading-normal! mb-40 text-justify">
-            <p class="mb-3">
-                Through a completely different educational background in IT Support, I was introduced to the magical world of web development, 
-                which has led me to where I am today. I've had the pleasure of building web solutions at a <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital agency</a>.
-            </p>
+        <section id="about" class="mb-40">
+            <h2 class="text-3xl text-pale-orange my-10">
+                about me
+            </h2>
 
-            <p class="mb-3">
-                My current focus is on building tailored digital solutions at <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
-                My personal preference lies at the intersection of beautiful design and optimized systems—aesthetics and function working together. 
-                If I had to choose between them, it would be aesthetics.
+            <p class="mb-4 text-base text-justify">
+                What started as an IT Support background unexpectedly led me to web development, and I've never looked back. I began by crafting web experiences at a <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital agency</a>, where I discovered my passion for creating interfaces that are as beautiful as they are functional.
             </p>
-
-            <p>
-                When I'm not building digital solutions for clients, I spend time with my partner and dog, reading books, 
-                playing the latest games that catch my attention, or working on personal projects.
+            <p class="mb-4 text-base text-justify">
+                Today, I'm focused on building thoughtful digital solutions at <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
+                I believe the best work happens at the intersection of design and engineering—where pixel-perfect interfaces are backed by solid architecture. Great aesthetics catch the eye, but great systems keep people coming back.
+            </p>
+            <p class="text-base text-justify">
+                Outside of work, I spend time with my partner of 11 years, my son and dog, explore new technologies through side projects, and play games that inspire me with their craft. These experiences continuously inform how I approach building for real users with real needs. It's why I'm always learning, always iterating, and always pushing myself to create better experiences.
             </p>
         </section>
 
-        <h2 class="text-3xl text-pale-orange mb-10">My Projects</h2>
+        <section class="mb-40">
+            <h2 class="text-3xl text-pale-orange my-10">
+                skills & technologies
+            </h2>
 
-        <section id="projects" class="flex flex-col gap-10">
-            <Project 
-                name="VillaVilla"
-                description="Senior full stack developer for a Danish luxury summer vacation home rental service website, featuring custom booking systems and dynamic property showcases."
-                url="https://villavilla.dk"
-                imgSrc={villavilla}
-                imgAlt="VillaVilla luxury vacation rental website homepage"
-                skills={['Laravel', 'Vue.js', 'WordPress', 'REST API', 'Git']}
-            />
+            <div class="flex flex-wrap gap-3 mb-6">
+                <Skill name="HTML5" />
+                <Skill name="CSS3" />
+                <Skill name="SCSS" />
+                <Skill name="Bun" />
+                <Skill name="Tailwind CSS" />
+                <Skill name="JavaScript" />
+                <Skill name="TypeScript" />
+                <Skill name="Vue.js" />
+                <Skill name="Astro" />
+                <Skill name="PHP" />
+                <Skill name="Laravel" />
+                <Skill name="WordPress" />
+                <Skill name="WooCommerce" />
+                <Skill name="REST API" />
+                <Skill name="MySQL" />
+                <Skill name="Git" />
+                <Skill name="Cloudflare" />
+                <Skill name="AWS" />
+                <Skill name="Redis" />
+                <Skill name="Webpack" />
+                <Skill name="jQuery" />
+                <span class="py-1 text-xs italic">
+                    Still loading...
+                </span>
+            </div>
 
-            <Project 
-                name="andreolsen.github.io"
-                description="In pursuit of learning technologies and honing my skills, I've developed my personal portfolio website."
-                url="https://andreolsen.github.io"
-                imgSrc={andreolsen}
-                imgAlt="André Olsen's portfolio website"
-                skills={['Astro', 'Tailwind', 'TypeScript', 'Bun', 'Vite']}
-            />
+            <p class="mb-4 text-base text-justify">
+                Over the years, I've honed a diverse skill set that spans both front-end and back-end development. On the front end, I'm proficient in HTML5, CSS3 (with a strong emphasis on responsive design using Tailwind CSS), and JavaScript/TypeScript. I have experience with modern frameworks like Vue.js and Astro, enabling me to build dynamic and engaging user interfaces.
+            </p>
+            <p class="mb-4 text-base text-justify">
+                On the back end, I specialize in PHP and have extensive experience with Laravel for building robust web applications. I'm also well-versed in WordPress development, including custom theme and plugin creation. My knowledge extends to RESTful API integration, database management with MySQL, and version control using Git.
+            </p>
+            <p class="text-base text-justify">
+                Beyond coding, I have a solid understanding of web performance optimization, SEO best practices, and accessibility standards. This holistic approach ensures that the solutions I build are not only functional but also user-friendly and efficient.
+            </p>
+        </section>
 
-            <Project 
-                name="Solgt.com - Brugte Biler"
-                description="Development of a used car marketplace website with advanced search and filtering capabilities, and seamless integration with third-party vehicle data providers."
-                url="https://solgt.com/brugte-biler"
-                imgSrc={solgtcom}
-                imgAlt="Solgt.com used cars website"
-                skills={['WordPress', 'WooCommerce', 'JavaScript', 'REST API']}
-            />
+        <section id="projects">
+            <h2 class="text-3xl text-pale-orange my-10">
+                my work
+            </h2>
 
-            <Project 
-                name="CLEMENS Advokatpartnerselskab"
-                description="A Danish WordPress website with multilingual support, built to reimagine the Danish CLEMENS Law Firms online presence."
-                url="https://clemenslaw.dk"
-                imgSrc={clemenslaw}
-                imgAlt="Clemens Law Firm website"
-                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP', 'Weglot']}
-            />
+            <div class="flex flex-col gap-10">
+                <Project 
+                    name="VillaVilla"
+                    description="Senior full stack developer for a Danish luxury summer vacation home rental service website, featuring custom booking systems and dynamic property showcases."
+                    url="https://villavilla.dk"
+                    imgSrc={villavilla}
+                    imgAlt="VillaVilla luxury vacation rental website homepage"
+                    skills={['Laravel', 'Vue.js', 'WordPress', 'REST API', 'Git']}
+                />
 
-            <Project 
-                name="Danmarks Fiskeriforening"
-                description="Danish fishing association website featuring an integrated news feed from Fiskeri Tidende, a pseudo-member portal, and interactive maps for association locations and fishing information."
-                url="https://fiskeriforening.dk"
-                imgSrc={fiskeriforening}
-                imgAlt="Fiskeriforening fishing association website with member portal"
-                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
-            />
+                <Project 
+                    name="andreolsen.github.io"
+                    description="In pursuit of learning technologies and honing my skills, I've developed my personal portfolio website."
+                    url="https://andreolsen.github.io"
+                    imgSrc={andreolsen}
+                    imgAlt="André Olsen's portfolio website"
+                    skills={['Astro', 'Tailwind', 'TypeScript', 'Bun', 'Vite']}
+                />
 
-            <Project 
-                name="Fiskeri Tidende"
-                description="Led the migration from Umbraco to WordPress, implementing a complete import of the news catalog with structured categories and tags for improved organization and discoverability."
-                url="https://fiskeritidende.dk"
-                imgSrc={fiskeritidende}
-                imgAlt="Fiskeri Tidende fishing news website"
-                skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
-            />
+                <Project 
+                    name="Solgt.com - Brugte Biler"
+                    description="Development of a used car marketplace website with advanced search and filtering capabilities, and seamless integration with third-party vehicle data providers."
+                    url="https://solgt.com/brugte-biler"
+                    imgSrc={solgtcom}
+                    imgAlt="Solgt.com used cars website"
+                    skills={['WordPress', 'WooCommerce', 'JavaScript', 'REST API']}
+                />
+
+                <Project 
+                    name="CLEMENS Advokatpartnerselskab"
+                    description="A Danish WordPress website with multilingual support, built to reimagine the Danish CLEMENS Law Firms online presence."
+                    url="https://clemenslaw.dk"
+                    imgSrc={clemenslaw}
+                    imgAlt="Clemens Law Firm website"
+                    skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP', 'Weglot']}
+                />
+
+                <Project 
+                    name="Danmarks Fiskeriforening"
+                    description="Danish fishing association website featuring an integrated news feed from Fiskeri Tidende, a pseudo-member portal, and interactive maps for association locations and fishing information."
+                    url="https://fiskeriforening.dk"
+                    imgSrc={fiskeriforening}
+                    imgAlt="Fiskeriforening fishing association website with member portal"
+                    skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
+                />
+
+                <Project 
+                    name="Fiskeri Tidende"
+                    description="Led the migration from Umbraco to WordPress, implementing a complete import of the news catalog with structured categories and tags for improved organization and discoverability."
+                    url="https://fiskeritidende.dk"
+                    imgSrc={fiskeritidende}
+                    imgAlt="Fiskeri Tidende fishing news website"
+                    skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
+                />
+            </div>
         </section>
     </main>
 </Layout>
