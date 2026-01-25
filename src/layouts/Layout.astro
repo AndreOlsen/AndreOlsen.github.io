@@ -21,6 +21,7 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="color-scheme" content="dark" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		
 		<!-- Open Graph / Social Media -->
 		<meta property="og:type" content="website" />
@@ -28,18 +29,20 @@ const { title, description } = Astro.props;
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="André Winther Olsen" />
+		<meta property="og:image" content="https://andreolsen.github.io/share-image.png" />
 		
 		<!-- Twitter Card -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://andreolsen.github.io" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://andreolsen.github.io/share-image.png" />
 		
 		<!-- Canonical URL -->
 		<link rel="canonical" href="https://andreolsen.github.io" />
 		
 		<!-- JSON-LD Schema -->
-		<script type="application/ld+json" set:html={JSON.stringify({
+		<script is:inline type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Person",
 			"name": "André Winther Olsen",
@@ -60,7 +63,6 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
-		<!-- Skip to content link for keyboard users -->
 		<a href="#main" class="skip-link">skip to main content</a>
 		
 		<div class="cursor"></div>
