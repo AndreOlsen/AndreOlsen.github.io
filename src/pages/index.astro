@@ -5,6 +5,8 @@ import fiskeritidende from '@assets/projects/fiskeritidende.dk.png';
 import andreolsen from '@assets/projects/andreolsen.github.io.png';
 import fiskeriforening from '@assets/projects/fiskeriforening.dk.png';
 import villavilla from '@assets/projects/villavilla.dk.png';
+import beof from '@assets/projects/beof.dk.png';
+import cecilies from '@assets/projects/cecilies.dk.png';
 import solgtcom from '@assets/projects/solgt.com.png';
 import Project from '@components/Project.astro';
 import Socials from '@components/Socials.astro';
@@ -32,7 +34,7 @@ import Skill from '@components/Skill.astro';
                 
                 <p class="opacity-0 text-lg animate-[fadeInUp_500ms_cubic-bezier(0.34,1.56,0.64,1)_1_650ms_both] mt-12 max-w-3xl mx-auto leading-relaxed text-cyan-green/90">
                     i'm a full-stack developer @ <a href="https://adtention.dk" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's workplace" target="_blank">adtention</a> 
-                    with 3+ years of experience transforming visions into exceptional online experiences. i specialize in building thoughtful solutions that balance pixel-perfect interfaces with robust architecture, where great aesthetics catch the eye, but great systems keep people coming back.
+                    with 5+ years of experience transforming visions into exceptional online experiences. i specialize in building thoughtful solutions that balance pixel-perfect interfaces with robust architecture, where great aesthetics catch the eye, but great systems keep people coming back.
                     <br /><br />
                     learn more <a href="#about" class="text-pale-orange hover-underline" aria-label="Link to about André Olsen">about me</a>, explore
                     <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's projects">my work</a>, or check out my
@@ -121,6 +123,15 @@ import Skill from '@components/Skill.astro';
                 />
 
                 <Project 
+                    name="Bornholms Energi & Forsyning (BEOF)"
+                    description="Development of a Danish energy and supply company website with operational status display and dynamic electrical price chart."
+                    url="https://beof.dk"
+                    imgSrc={beof}
+                    imgAlt="Bornholms Energi & Forsyning website"
+                    skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP', 'Webhook']}
+                />
+
+                <Project 
                     name="andreolsen.github.io"
                     description="In pursuit of learning technologies and honing my skills, I've developed my personal portfolio website."
                     url="https://andreolsen.github.io"
@@ -164,6 +175,16 @@ import Skill from '@components/Skill.astro';
                     imgAlt="Fiskeri Tidende fishing news website"
                     skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
                 />
+
+                <Project 
+                    name="Cecilies"
+                    description="Crafted a WordPress site with a custom page-based department structure, differentiating content based off of selected department."
+                    url="https://cecilies.dk"
+                    imgSrc={cecilies}
+                    imgAlt="Cecilies website"
+                    skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
+                />
+
             </div>
         </section>
     </main>
