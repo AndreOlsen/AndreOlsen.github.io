@@ -3,6 +3,14 @@
 
 @layer theme, base, components, utilities;
 
+@font-face {
+    font-family: "MonaspaceNeon";
+    src: url("../assets/fonts/MonaspaceNeon-Regular.woff2") format("woff2"),
+        url("../assets/fonts/MonaspaceNeon-Regular.woff") format("woff");
+    font-weight: 400;
+    font-display: swap;
+}
+
 @layer components {
     .hover-underline {
         display: inline-block;
@@ -30,6 +38,8 @@
     --color-pale-orange: #FFCB9A;
     --color-grey-blue: #17252A;
     --color-cyan-green: #D1E8E2;
+
+    --font-family-mono: "MonaspaceNeon", monospace;
 
     --max-width-content: 55rem;
     --max-width-reading: 40rem;
