@@ -11,10 +11,11 @@ import solgtcom from '@assets/projects/solgt.com.png';
 import Project from '@components/Project.astro';
 import Socials from '@components/Socials.astro';
 import Skill from '@components/Skill.astro';
+import Practice from '@components/Practice.astro';
 ---
 <Layout
-	title="André Winther Olsen - Full Stack Artisan"
-	description="Portfolio of André Winther Olsen, a dedicated full-stack developer specializing in crafting seamless web experiences with a focus on both front-end and back-end technologies."
+	title="André Winther Olsen - Lead Backend Developer"
+	description="Portfolio of André Winther Olsen, a lead backend developer working exclusively in Laravel, architecting and maintaining large-scale web applications, with a focus on agentic development workflows using Claude Code."
 >
     <header class="h-screen w-full grid place-items-center">
         <div class="flex flex-col items-center lg:mx-auto mx-[5vw] lg:max-w-6xl">
@@ -27,14 +28,14 @@ import Skill from '@components/Skill.astro';
                         André Winther Olsen.
                     </span>
                 </h1>
-                
+
                 <p class="font-mono opacity-0 text-base animate-[fadeInUp_500ms_cubic-bezier(0.34,1.56,0.64,1)_1_500ms_both] mt-6 max-w-xl mx-auto text-cyan-green/70 italic">
-                    full stack artisan
+                    laravel artisan
                 </p>
-                
+
                 <p class="opacity-0 text-lg animate-[fadeInUp_500ms_cubic-bezier(0.34,1.56,0.64,1)_1_650ms_both] mt-12 max-w-3xl mx-auto leading-relaxed text-cyan-green/90">
-                    i'm a full-stack developer @ <a href="https://adtention.dk" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's workplace" target="_blank">adtention</a>{" "}
-                    with 5+ years of experience transforming visions into exceptional online experiences. i specialize in building thoughtful solutions that balance pixel-perfect interfaces with robust architecture, where great aesthetics catch the eye, but great systems keep people coming back.
+                    i'm a lead backend developer @ <a href="https://zakobo.dk" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's workplace" target="_blank">zakobo</a>{" "}
+                    with 5+ years of experience. i work exclusively in laravel, leading the architecture on three large applications, and i spend a good deal of time on the tooling and workflow around them.
                     <br /><br />
                     learn more <a href="#about" class="text-pale-orange hover-underline" aria-label="Link to about André Olsen">about me</a>, explore{" "}
                     <a href="#projects" class="text-pale-orange hover-underline" aria-label="Link to André Olsen's projects">my work</a>, or check out my{" "}
@@ -53,11 +54,11 @@ import Skill from '@components/Skill.astro';
             </h2>
 
             <p class="mb-4 text-base text-justify">
-                What started as an IT Support background unexpectedly led me to web development, and I've never looked back. I began by crafting web experiences at a <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital agency</a>, where I discovered my passion for creating interfaces that are as beautiful as they are functional.
+                What started as an IT Support background unexpectedly led me to web development, and I've never looked back. I began by crafting web experiences at a <a href="https://morningtrain.dk/" class="text-pale-orange hover-underline" target="_blank">digital agency</a>, where I discovered my passion for creating interfaces that are as beautiful as they are functional. I have since had the pleasure of working at <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>, where I moved steadily further down the stack until the backend was all I wanted to do.
             </p>
             <p class="mb-4 text-base text-justify">
-                Today, I'm focused on building thoughtful digital solutions at <a href="https://adtention.dk" class="text-pale-orange hover-underline" target="_blank">Adtention</a>.
-                I believe the best work happens at the intersection of design and engineering, where pixel-perfect interfaces are backed by solid architecture. Great aesthetics catch the eye, but great systems keep people coming back.
+                Today I lead backend development at <a href="https://zakobo.dk" class="text-pale-orange hover-underline" target="_blank">Zakobo</a>, working exclusively in Laravel. I manage three large Laravel applications, from data modelling and architecture to keeping them maintainable as they grow. None of them are public yet, so there is not much I can show.
+                What I care about is work that is still easy to change a year later. Great systems keep people coming back.
             </p>
             <p class="text-base text-justify">
                 Outside of work, I spend time with my partner of 11 years, my son and dog, explore new technologies through side projects, and play games that inspire me with their craft. These experiences continuously inform how I approach building for real users with real needs. It's why I'm always learning, always iterating, and always pushing myself to create better experiences.
@@ -69,39 +70,97 @@ import Skill from '@components/Skill.astro';
                 skills & technologies
             </h2>
 
-            <ul class="flex flex-wrap gap-3 mb-6 list-none p-0 justify-between">
-                <Skill name="HTML5" />
-                <Skill name="CSS3" />
-                <Skill name="SCSS" />
-                <Skill name="Bun" />
-                <Skill name="Tailwind CSS" />
-                <Skill name="JavaScript" />
+            <ul class="flex flex-wrap gap-3 mb-6 list-none p-0">
+                <Skill name="PHP" />
+                <Skill name="Laravel" />
+                <Skill name="MySQL" />
+                <Skill name="Redis" />
+                <Skill name="REST API" />
+                <Skill name="OpenAPI" />
+                <Skill name="OAuth2" />
+                <Skill name="Multi-tenancy" />
+                <Skill name="Webhooks" />
+                <Skill name="PHPUnit" />
+                <Skill name="PHPStan" />
+                <Skill name="Claude Code" />
+                <Skill name="AI-Assisted Development" />
+                <Skill name="Git" />
+                <Skill name="GitHub Actions" />
+                <Skill name="AWS" />
+                <Skill name="Cloudflare" />
                 <Skill name="TypeScript" />
                 <Skill name="Vue.js" />
                 <Skill name="Astro" />
-                <Skill name="PHP" />
-                <Skill name="Laravel" />
+                <Skill name="Tailwind CSS" />
                 <Skill name="WordPress" />
-                <Skill name="WooCommerce" />
-                <Skill name="REST API" />
-                <Skill name="MySQL" />
-                <Skill name="Git" />
-                <Skill name="Cloudflare" />
-                <Skill name="AWS" />
-                <Skill name="Redis" />
-                <Skill name="Webpack" />
-                <Skill name="jQuery" />
             </ul>
 
             <p class="mb-4 text-base text-justify">
-                Over the years, I've honed a diverse skill set that spans both front-end and back-end development. On the front end, I'm proficient in HTML5, CSS3 (with a strong emphasis on responsive design using Tailwind CSS), and JavaScript/TypeScript. I have experience with modern frameworks like Vue.js and Astro, enabling me to build dynamic and engaging user interfaces.
+                My focus is Laravel and PHP. Day to day that means data models, APIs, queues and the service layer, and keeping all of it readable as the application grows.
             </p>
             <p class="mb-4 text-base text-justify">
-                On the back end, I specialize in PHP and have extensive experience with Laravel for building robust web applications. I'm also well-versed in WordPress development, including custom theme and plugin creation. My knowledge extends to RESTful API integration, database management with MySQL, and version control using Git.
+                I also use Claude Code every day, and I have built the tooling around it that makes it work on a codebase this size. There is more on that below.
+            </p>
+            <p class="mb-4 text-base text-justify">
+                I came up through the front end and still work in HTML, CSS, Tailwind, JavaScript/TypeScript, Vue and Astro. I do not work across the stack any more, but knowing what sits on the other side of an API helps when designing one. The same goes for the years I spent building WordPress themes and plugins.
             </p>
             <p class="text-base text-justify">
-                Beyond coding, I have a solid understanding of web performance optimization, SEO best practices, and accessibility standards. This holistic approach ensures that the solutions I build are not only functional but also user-friendly and efficient.
+                Outside of the application code I deal with performance, database design, caching with Redis, and getting releases out safely.
             </p>
+        </section>
+
+        <section class="mb-40" id="how-i-work">
+            <h2 class="font-mono text-3xl text-pale-orange my-10">
+                how i work
+            </h2>
+
+            <p class="mb-10 text-base text-justify">
+                The applications I work on are not public yet, so instead of showing those, here is how they are built. Most of it comes down to keeping feedback fast and catching mistakes without having to remember to look for them.
+            </p>
+
+            <div class="flex flex-col gap-10">
+                <Practice
+                    name="Small pull requests"
+                    problem="large branches get skimmed"
+                    description="A big branch gets skimmed instead of reviewed. I split work into a stack of smaller, dependent pull requests so each one can be read properly, and so the discussion lands on the change that introduces the decision."
+                    tags={['Git', 'Code Review']}
+                />
+
+                <Practice
+                    name="Static analysis in CI"
+                    problem="conventions that only live in review comments"
+                    description="PHPStan runs over the application on every pull request, and the style rules are strict: declared types, no useless else, explicit nullables. If a machine can catch it, it should not be taking up review time."
+                    tags={['PHPStan', 'Larastan', 'Pint']}
+                />
+
+                <Practice
+                    name="Sharded test runs"
+                    problem="a slow suite is a suite people skip"
+                    description="The suite is split across four parallel jobs and runs against MySQL in memory. Linting and tests are separate jobs, so a formatting error does not sit behind a twenty minute test run. Runs are cancelled once a branch moves on."
+                    tags={['GitHub Actions', 'MySQL', 'ParaTest']}
+                />
+
+                <Practice
+                    name="Two ways to run the tests"
+                    problem="fast feedback that stops being accurate"
+                    description="Locally I run test impact analysis, which only runs the tests a change can affect. It is quick, but a skipped test is a cached result and not a pass, so the full suite still runs before anything is merged."
+                    tags={['PHPUnit', 'Test Impact Analysis']}
+                />
+
+                <Practice
+                    name="One checkout per task"
+                    problem="parallel work fighting over the same files"
+                    description="Anything running in parallel, agent sessions included, gets its own git worktree. A hook installs it on first use and records when that finished, so an interrupted install is not mistaken for a working one. Test databases are named after the checkout they belong to and dropped once it is gone."
+                    tags={['Git Worktrees', 'Shell', 'Claude Code']}
+                />
+
+                <Practice
+                    name="Conventions live in the repo"
+                    problem="generic advice on a specific codebase"
+                    description="Our conventions are committed as skills and a review agent instead of sitting in a wiki. It keeps automated review specific to this codebase, and it works just as well for onboarding people."
+                    tags={['Claude Code', 'Documentation', 'Code Review']}
+                />
+            </div>
         </section>
 
         <section id="projects">
@@ -110,7 +169,7 @@ import Skill from '@components/Skill.astro';
             </h2>
 
             <div class="flex flex-col gap-10">
-                <Project 
+                <Project
                     name="VillaVilla"
                     description="Senior full stack developer for a Danish luxury summer vacation home rental service website, featuring custom booking systems and dynamic property showcases."
                     url="https://villavilla.dk"
@@ -119,7 +178,7 @@ import Skill from '@components/Skill.astro';
                     skills={['Laravel', 'Vue.js', 'WordPress', 'REST API', 'Git']}
                 />
 
-                <Project 
+                <Project
                     name="Bornholms Energi & Forsyning (BEOF)"
                     description="Development of a Danish energy and supply company website with operational status display and dynamic electrical price chart."
                     url="https://beof.dk"
@@ -128,7 +187,7 @@ import Skill from '@components/Skill.astro';
                     skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP', 'Webhook']}
                 />
 
-                <Project 
+                <Project
                     name="andreolsen.github.io"
                     description="In pursuit of learning technologies and honing my skills, I've developed my personal portfolio website."
                     url="https://andreolsen.github.io"
@@ -137,7 +196,7 @@ import Skill from '@components/Skill.astro';
                     skills={['Astro', 'Tailwind', 'TypeScript', 'Bun', 'Vite']}
                 />
 
-                <Project 
+                <Project
                     name="Solgt.com - Brugte Biler"
                     description="Development of a used car marketplace website with advanced search and filtering capabilities, and seamless integration with third-party vehicle data providers."
                     url="https://solgt.com/brugte-biler"
@@ -146,7 +205,7 @@ import Skill from '@components/Skill.astro';
                     skills={['WordPress', 'WooCommerce', 'JavaScript', 'REST API']}
                 />
 
-                <Project 
+                <Project
                     name="CLEMENS Advokatpartnerselskab"
                     description="A Danish WordPress website with multilingual support, built to reimagine the Danish CLEMENS Law Firms online presence."
                     url="https://clemenslaw.dk"
@@ -155,7 +214,7 @@ import Skill from '@components/Skill.astro';
                     skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP', 'Weglot']}
                 />
 
-                <Project 
+                <Project
                     name="Danmarks Fiskeriforening"
                     description="Danish fishing association website featuring an integrated news feed from Fiskeri Tidende, a pseudo-member portal, and interactive maps for association locations and fishing information."
                     url="https://fiskeriforening.dk"
@@ -164,7 +223,7 @@ import Skill from '@components/Skill.astro';
                     skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
                 />
 
-                <Project 
+                <Project
                     name="Fiskeri Tidende"
                     description="Led the migration from Umbraco to WordPress, implementing a complete import of the news catalog with structured categories and tags for improved organization and discoverability."
                     url="https://fiskeritidende.dk"
@@ -173,7 +232,7 @@ import Skill from '@components/Skill.astro';
                     skills={['WordPress', 'SCSS', 'Webpack', 'Git', 'PHP']}
                 />
 
-                <Project 
+                <Project
                     name="Cecilies"
                     description="Crafted a WordPress site with a custom page-based department structure, differentiating content based off of selected department."
                     url="https://cecilies.dk"

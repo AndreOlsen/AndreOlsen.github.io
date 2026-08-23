@@ -1,4 +1,4 @@
---- 
+---
 import '@styles/global.css';
 import Footer from '@components/Footer.astro';
 
@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description } = Astro.props;
 ---
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<meta name="color-scheme" content="dark" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		
+
 		<!-- Open Graph / Social Media -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://andreolsen.github.io" />
@@ -30,41 +30,41 @@ const { title, description } = Astro.props;
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="André Winther Olsen" />
 		<meta property="og:image" content="https://andreolsen.github.io/share-image.png" />
-		
+
 		<!-- Twitter Card -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://andreolsen.github.io" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="https://andreolsen.github.io/share-image.png" />
-		
+
 		<!-- Canonical URL -->
 		<link rel="canonical" href="https://andreolsen.github.io" />
-		
+
 		<!-- JSON-LD Schema -->
 		<script is:inline type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Person",
 			"name": "André Winther Olsen",
 			"url": "https://andreolsen.github.io",
-			"jobTitle": "Full Stack Developer",
+			"jobTitle": "Lead Backend Developer",
 			"worksFor": {
 				"@type": "Organization",
-				"name": "Adtention",
-				"url": "https://adtention.dk"
+				"name": "Zakobo",
+				"url": "https://zakobo.dk"
 			},
+			"knowsAbout": ["Laravel", "PHP", "Backend Development", "Claude Code", "AI-Assisted Development"],
 			"sameAs": [
 				"https://github.com/AndreOlsen",
-				"https://linkedin.com/in/andre-w-olsen",
-				"https://codepen.io/Andr-Olsen"
+				"https://linkedin.com/in/andre-w-olsen"
 			]
 		})} />
-		
+
 		<title>{title}</title>
 	</head>
 	<body class="bg-grey-blue text-cyan-green">
 		<a href="#main" class="skip-link">skip to main content</a>
-		
+
 		<div class="cursor"></div>
 
 		<slot />
@@ -163,7 +163,7 @@ const { title, description } = Astro.props;
 				// Offset by 10 to center it on the original cursor.
 				const x: number = e.clientX - 10;
 				const y: number = e.clientY - 10;
-				
+
 				DEBUG && console.log('Updating cursor position');
 				DEBUG && console.log('X: ' + x + ' / ' + 'Y: ' + y);
 
