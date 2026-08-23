@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 
 interface Props {
 	name: string;
+    context: string;
     description: string;
     url: string;
     imgSrc: ImageMetadata;
@@ -13,7 +14,7 @@ interface Props {
     skills: Array<string>
 }
 
-const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
+const { name, context, description, url, imgSrc, imgAlt, skills } = Astro.props;
 ---
 <a href={url} target="_blank" rel="noopener" class="project-card-link">
     <article class="flex flex-col md:flex-row gap-5 lg:gap-8 project-card">
@@ -29,6 +30,10 @@ const { name, description, url, imgSrc, imgAlt, skills } = Astro.props;
                 
                 <Icon name="mdi:arrow-up-thin" class="h-6 rotate-45" />
             </header>
+
+            <p class="font-mono text-xs text-pale-orange/70 mb-2">
+                {context}
+            </p>
 
             <p class="text-base leading-snug! mb-3">
                 {description}
